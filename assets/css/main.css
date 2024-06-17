@@ -79,7 +79,7 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: #000000;
+  --background-color: #040555;
   --default-color: #ffffff;
   --heading-color: #ffffff;
   color: var(--default-color);
@@ -590,9 +590,9 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Hero Section
+# Home Section
 --------------------------------------------------------------*/
-.hero {
+.home {
   --background-color: #000000;
   --default-color: #ffffff;
   --heading-color: #ffffff;
@@ -605,7 +605,7 @@ section,
   justify-content: center;
 }
 
-.hero img {
+.home img {
   position: absolute;
   inset: 0;
   display: block;
@@ -615,7 +615,7 @@ section,
   z-index: 1;
 }
 
-.hero:before {
+.home:before {
   content: "";
   background: color-mix(in srgb, var(--background-color), transparent 30%);
   position: absolute;
@@ -623,33 +623,33 @@ section,
   z-index: 2;
 }
 
-.hero .container {
+.home .container {
   position: relative;
   z-index: 3;
 }
 
-.hero h2 {
+.home h2 {
   margin: 0;
   font-size: 64px;
   font-weight: 700;
 }
 
-.hero p {
+.home p {
   margin: 5px 0 0 0;
   font-size: 36px;
   font-weight: 600;
 }
 
-.hero p span {
+.home p span {
   letter-spacing: 1px;
 }
 
 @media (max-width: 768px) {
-  .hero h2 {
+  .home h2 {
     font-size: 32px;
   }
 
-  .hero p {
+  .home p {
     font-size: 20px;
   }
 }
