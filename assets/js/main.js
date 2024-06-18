@@ -248,19 +248,6 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
-  /**
-   * Function to download the resume PDF
-   */
-  function downloadResume() {
-    const fileName = 'CV_RishiAryal_IT.pdf'; // Specify the name of your PDF file
-    const fileUrl = 'assets/documents/CV_RishiAryal_IT.pdf'; // Relative path to your PDF file
-
-    const link = document.createElement('a');
-    link.href = fileUrl;
-    link.download = fileName;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }
+  
 
 })();
