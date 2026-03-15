@@ -1,135 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rishi Aryal | Senior IT Consultant & Python Developer</title>
-  <meta name="description" content="Rishi Aryal - Senior IT Consultant, Python Developer, DevOps Expert. Expert in enterprise systems, cloud-native applications, and digital transformation.">
-  <meta name="keywords" content="Rishi Aryal, Python Developer, IT Consultant, DevOps, Django, Agile, Government MIS, CI/CD, GitOps">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body { padding-top: 70px; font-family: Arial, sans-serif; }
-    .hero { background: linear-gradient(135deg, #0d6efd, #002855); color: white; padding: 140px 0; text-align: center; }
-    .hero h1 { font-weight: 700; }
-    .hero .btn { margin-top: 15px; }
-    .projects, .devops, .blog, .lead-capture { padding: 60px 0; }
-    .projects h2, .devops h2, .blog h2, .lead-capture h2 { margin-bottom: 40px; }
-    .project-card { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
-    .devops .col-md-4 { margin-bottom: 30px; }
-    .lead-capture { background: #0d6efd; color: white; }
-    footer { background: #212529; color: white; padding: 20px 0; text-align: center; }
-    footer a { color: #0d6efd; text-decoration: none; margin: 0 10px; }
-  </style>
+  <title>Home - Rishi Aryal</title>
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<!-- Navbar -->
+<div id="navbar-placeholder"></div>
+<script>
+fetch('navbar.html')
+  .then(response => response.text())
+  .then(data => { document.getElementById('navbar-placeholder').innerHTML = data; });
+</script>
+
+<main>
+  <section class="hero section">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Rishi Aryal</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h1>Rishi Aryal</h1>
-      <p class="lead">Senior IT Consultant | Python Developer | DevOps Expert</p>
-      <p>Helping governments, NGOs, and businesses build scalable digital systems.</p>
-      <a href="contact.html" class="btn btn-primary btn-lg">Hire Me</a>
-      <a href="projects.html" class="btn btn-outline-light btn-lg ms-3">View Projects</a>
+      <h1>Welcome to Rishi Aryal's Portfolio</h1>
+      <p>Full-stack developer, IT consultant, and Python enthusiast.</p>
     </div>
   </section>
+</main>
 
-  <!-- Projects Section -->
-  <section class="projects container">
-    <h2 class="text-center">My Projects</h2>
-    <div class="row">
-      <div class="col-md-6 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Orbital: Django DevOps Platform</h5>
-            <p class="card-text">CI/CD pipeline, containerized deployment, GitOps workflow.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Mega City Commuter App</h5>
-            <p class="card-text">Public transport mobile app with Python backend and Scrum methodology.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <h3 class="text-center mt-5">GitHub Contributions</h3>
-    <div class="text-center">
-      <img src="https://ghchart.rshah.org/RishiAryal24" alt="GitHub chart">
-    </div>
-  </section>
-
-  <!-- DevOps Section -->
-  <section class="devops bg-light">
-    <div class="container">
-      <h2 class="text-center">DevOps Expertise</h2>
-      <div class="row text-center">
-        <div class="col-md-4">
-          <h4>CI/CD Pipelines</h4>
-          <p>Automated build and deployment pipelines using GitHub Actions.</p>
-        </div>
-        <div class="col-md-4">
-          <h4>Containerization</h4>
-          <p>Dockerized applications deployed in cloud environments.</p>
-        </div>
-        <div class="col-md-4">
-          <h4>GitOps Deployment</h4>
-          <p>Kubernetes deployments using GitOps workflows.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Blog Section -->
-  <section class="blog container">
-    <h2 class="text-center">Latest Articles</h2>
-    <div class="project-card">
-      <h4>Building a DevOps Pipeline with GitHub Actions</h4>
-      <p>Step-by-step guide to building a secure CI/CD pipeline for Python applications.</p>
-    </div>
-    <div class="project-card">
-      <h4>Government MIS Systems with Django</h4>
-      <p>Lessons learned developing enterprise systems for public sector organizations.</p>
-    </div>
-  </section>
-
-  <!-- Lead Capture Section -->
-  <section class="lead-capture">
-    <div class="container text-center">
-      <h2>Need an IT Consultant?</h2>
-      <p>I help organizations build scalable digital systems and implement digital transformation strategies.</p>
-      <a href="contact.html" class="btn btn-primary btn-lg mt-3">Start a Project</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 Rishi Aryal</p>
-    <a href="https://github.com/RishiAryal24" target="_blank">GitHub</a> |
-    <a href="https://linkedin.com/in/YOUR_PROFILE" target="_blank">LinkedIn</a>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

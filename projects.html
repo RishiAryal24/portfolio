@@ -1,71 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects - Rishi Aryal</title>
-  <meta name="description" content="Rishi Aryal - Portfolio of Python and DevOps projects. Explore web apps, CI/CD pipelines, and enterprise solutions.">
-  <meta name="keywords" content="Rishi Aryal, Projects, Python Developer, DevOps, Django, CI/CD, GitOps, Portfolio">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body { padding-top: 70px; font-family: Arial, sans-serif; }
-    .projects-section { padding: 60px 0; }
-    .project-card { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
-    footer { background: #212529; color: white; padding: 20px 0; text-align: center; }
-    footer a { color: #0d6efd; text-decoration: none; margin: 0 10px; }
-  </style>
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<!-- Navbar -->
+<div id="navbar-placeholder"></div>
+<script>
+fetch('navbar.html')
+  .then(response => response.text())
+  .then(data => { document.getElementById('navbar-placeholder').innerHTML = data; });
+</script>
+
+<main>
+  <section class="projects section">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Rishi Aryal</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
+      <h2>Projects</h2>
+      <p>Here are some of my key projects:</p>
+      <!-- Add project cards -->
     </div>
-  </nav>
-
-  <!-- Projects Section -->
-  <section class="projects-section container">
-    <h2 class="text-center mb-5">Projects Portfolio</h2>
-
-    <div class="project-card">
-      <h4>Orbital: Django DevOps Platform</h4>
-      <p>Implemented a CI/CD pipeline, containerized deployment, and GitOps workflow for production-ready Django apps.</p>
-      <a href="#" class="btn btn-primary btn-sm mt-2">View Project</a>
-    </div>
-
-    <div class="project-card">
-      <h4>Mega City Commuter App</h4>
-      <p>Mobile app with Python backend for public transportation, developed using Scrum methodology and Agile project management.</p>
-      <a href="#" class="btn btn-primary btn-sm mt-2">View Project</a>
-    </div>
-
-    <div class="project-card">
-      <h4>Government MIS System</h4>
-      <p>Developed a scalable management information system integrating complex payments and data reporting for government projects.</p>
-      <a href="#" class="btn btn-primary btn-sm mt-2">View Project</a>
-    </div>
-
   </section>
+</main>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 Rishi Aryal</p>
-    <a href="https://github.com/YOUR_USERNAME" target="_blank">GitHub</a> |
-    <a href="https://linkedin.com/in/YOUR_PROFILE" target="_blank">LinkedIn</a>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
