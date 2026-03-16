@@ -9,7 +9,6 @@
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-
 <style>
 body{font-family:'Inter',sans-serif;background:#0f172a;color:white;scroll-behavior:smooth;}
 .navbar{position:fixed;top:0;width:100%;background:#020617;padding:16px;z-index:100;}
@@ -27,7 +26,7 @@ img.hero-img{width:360px;max-width:100%;border-radius:12px;box-shadow:0 20px 40p
 .timeline-item.right{left:50%;}
 .timeline-item::after{content: '';position: absolute;width:20px;height:20px;right:-10px;background:#6366f1;border-radius:50%;top:20px;}
 .timeline-item.right::after{left:-10px;}
-.skill-bar{width:0;}
+.skill-bar{width:0;height:12px;background:#6366f1;border-radius:6px;}
 @media(max-width:768px){.timeline::after{left:8px;}.timeline-item{width:100%;padding-left:30px;padding-right:20px;margin-bottom:20px;}.timeline-item.right{left:0;}.timeline-item::after{left:0;}}
 </style>
 </head>
@@ -42,6 +41,7 @@ img.hero-img{width:360px;max-width:100%;border-radius:12px;box-shadow:0 20px 40p
 <a href="#expertise">Expertise</a>
 <a href="#skills">Skills</a>
 <a href="#experience">Experience</a>
+<a href="#education">Education</a>
 <a href="#github">GitHub</a>
 <a href="#contact">Contact</a>
 </div>
@@ -137,6 +137,101 @@ Illustrates CI/CD pipeline and DevOps practices applied in enterprise platforms 
 </p>
 </section>
 
+<!-- EXPERTISE -->
+<section id="expertise" class="section" data-aos="fade-up">
+<h2 class="text-3xl text-center font-semibold mb-10">Technical Expertise</h2>
+<div class="grid md:grid-cols-3 gap-6 text-center">
+<div class="card">Agile & Scrum (CSM)</div>
+<div class="card">SDLC & Release Management</div>
+<div class="card">MIS / eCMS / EMIS Platforms</div>
+<div class="card">Jira / Backlog / Sprint Management</div>
+<div class="card">DevOps & Engineering Collaboration</div>
+<div class="card">Risk, Issue & Dependency Management</div>
+<div class="card">Stakeholder & Donor Coordination</div>
+<div class="card">Reporting, KPIs & Dashboards</div>
+<div class="card">Vendor & Contract Management</div>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section" data-aos="fade-up">
+<h2 class="text-3xl text-center font-semibold mb-10">Key Skills</h2>
+<div class="space-y-6 max-w-2xl mx-auto">
+  <div>
+    <p>Python & Data Analysis</p>
+    <div class="bg-slate-700 rounded-full h-3"><div class="skill-bar" data-width="95%"></div></div>
+  </div>
+  <div>
+    <p>Project & Program Management</p>
+    <div class="bg-slate-700 rounded-full h-3"><div class="skill-bar" data-width="100%"></div></div>
+  </div>
+  <div>
+    <p>DevOps & CI/CD</p>
+    <div class="bg-slate-700 rounded-full h-3"><div class="skill-bar" data-width="90%"></div></div>
+  </div>
+  <div>
+    <p>Data-driven Reporting</p>
+    <div class="bg-slate-700 rounded-full h-3"><div class="skill-bar" data-width="95%"></div></div>
+  </div>
+</div>
+</section>
+
+<!-- EXPERIENCE TIMELINE -->
+<section id="experience" class="section" data-aos="fade-up">
+<h2 class="text-3xl text-center font-semibold mb-10">Professional Experience</h2>
+<div class="timeline">
+  <div class="timeline-item left card mb-6">
+    <h3 class="font-semibold">Senior Software Project Manager</h3>
+    <p class="text-slate-400 text-sm">Freelance | Kathmandu, Nepal | 2019–Present</p>
+    <p>Delivered enterprise healthcare and MIS platforms with Agile & Jira management for UN and World Bank projects.</p>
+  </div>
+  <div class="timeline-item right card mb-6">
+    <h3 class="font-semibold">ICT Specialist / eCMS</h3>
+    <p class="text-slate-400 text-sm">PDHJ | Timor-Leste | 2015–2018</p>
+    <p>Managed nationwide electronic Case Management System, training, and vendor coordination for sustainability.</p>
+  </div>
+  <div class="timeline-item left card mb-6">
+    <h3 class="font-semibold">ICT / MIS Consultant</h3>
+    <p class="text-slate-400 text-sm">UNICEF / UNDP / World Bank | Timor-Leste & Nepal | 2007–2015</p>
+    <p>Delivered EMIS, Social Protection MIS, HMIS, and multiple national digital systems, enabling data-driven decisions.</p>
+  </div>
+</div>
+</section>
+
+<!-- EDUCATION & CERTIFICATIONS -->
+<section id="education" class="section" data-aos="fade-up">
+<h2 class="text-3xl text-center font-semibold mb-10">Education & Certifications</h2>
+<div class="grid md:grid-cols-2 gap-6 text-center">
+<div class="card">
+<h3>Master of Information Technology</h3>
+<p>Indira Gandhi National Open University (IGNOU) – 2004</p>
+</div>
+<div class="card">
+<h3>Bachelor of Information Technology</h3>
+<p>Indira Gandhi National Open University (IGNOU) – 2002</p>
+</div>
+<div class="card">
+<h3>Master of Economics</h3>
+<p>University of Delhi – 2008</p>
+</div>
+<div class="card">
+<h3>Certifications</h3>
+<p>Certified Scrum Master (CSM), Google Data Analytics, Google Project Management, Python Specialization</p>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section" data-aos="fade-up">
+<h2 class="text-3xl text-center font-semibold mb-10">Contact</h2>
+<p class="text-center text-slate-400 mb-6">Reach me via email or LinkedIn</p>
+<div class="text-center space-x-6">
+<a href="mailto:aryalrishi29@gmail.com" class="gradient px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition-transform">Email</a>
+<a href="https://www.linkedin.com/in/rishi-aryal-nepal" target="_blank" class="gradient px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition-transform">LinkedIn</a>
+<a href="https://github.com/RishiAryal24" target="_blank" class="gradient px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition-transform">GitHub</a>
+</div>
+</section>
+
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
 AOS.init();
@@ -150,6 +245,20 @@ var projects=[
 {coords:[-8.5569,125.5603], title:"UNDP / UNICEF / EMIS / Social Protection MIS", description:"National EMIS and social protection platforms, data integration and dashboards (2011–2015)"}
 ];
 projects.forEach(function(proj){L.marker(proj.coords).addTo(map).bindPopup('<b>'+proj.title+'</b><br>'+proj.description);});
+
+// Animate skill bars
+let skillBars = document.querySelectorAll(".skill-bar");
+let observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      let bar = entry.target;
+      bar.style.width = bar.getAttribute("data-width");
+      bar.style.transition = "width 2s ease-in-out";
+      observer.unobserve(bar);
+    }
+  });
+},{threshold:0.5});
+skillBars.forEach(bar => observer.observe(bar));
 </script>
 </body>
 </html>
