@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -12,103 +11,40 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <style>
-body{
-font-family:'Inter',sans-serif;
-background:#0f172a;
-color:white;
-scroll-behavior:smooth;
-}
-.navbar{
-position:fixed;
-top:0;
-width:100%;
-background:#020617;
-padding:16px;
-z-index:100;
-}
+body{font-family:'Inter',sans-serif;background:#0f172a;color:white;scroll-behavior:smooth;}
+.navbar{position:fixed;top:0;width:100%;background:#020617;padding:16px;z-index:100;}
 .navbar a{transition:0.3s;}
 .navbar a:hover{color:#6366f1;}
-.section{
-max-width:1200px;
-margin:auto;
-padding:120px 20px;
-}
-.card{
-background:#1e293b;
-padding:24px;
-border-radius:12px;
-transition:0.3s;
-}
-.card:hover{
-transform:translateY(-6px);
-box-shadow:0 20px 40px rgba(0,0,0,0.5);
-}
-.gradient{
-background:linear-gradient(135deg,#6366f1,#06b6d4);
-}
-img.hero-img{
-width:360px;
-max-width:100%;
-border-radius:12px;
-box-shadow:0 20px 40px rgba(0,0,0,0.5);
-}
-.timeline {
-position: relative;
-margin-left: 0;
-margin-right: 0;
-}
-.timeline::after{
-content: '';
-position: absolute;
-width:4px;
-background:#6366f1;
-top:0;
-bottom:0;
-left:50%;
-margin-left:-2px;
-}
-.timeline-item{
-position: relative;
-width:50%;
-padding:20px 40px;
-box-sizing:border-box;
-}
+.section{max-width:1200px;margin:auto;padding:120px 20px;}
+.card{background:#1e293b;padding:24px;border-radius:12px;transition:0.3s;}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,0.5);}
+.gradient{background:linear-gradient(135deg,#6366f1,#06b6d4);}
+img.hero-img{width:360px;max-width:100%;border-radius:12px;box-shadow:0 20px 40px rgba(0,0,0,0.5);}
+.timeline {position: relative;margin-left: 0;margin-right: 0;}
+.timeline::after{content: '';position: absolute;width:4px;background:#6366f1;top:0;bottom:0;left:50%;margin-left:-2px;}
+.timeline-item{position: relative;width:50%;padding:20px 40px;box-sizing:border-box;}
 .timeline-item.left{left:0;}
 .timeline-item.right{left:50%;}
-.timeline-item::after{
-content: '';
-position: absolute;
-width:20px;
-height:20px;
-right:-10px;
-background:#6366f1;
-border-radius:50%;
-top:20px;
-}
+.timeline-item::after{content: '';position: absolute;width:20px;height:20px;right:-10px;background:#6366f1;border-radius:50%;top:20px;}
 .timeline-item.right::after{left:-10px;}
-@media(max-width:768px){
-.timeline::after{left:8px;}
-.timeline-item{width:100%;padding-left:30px;padding-right:20px;margin-bottom:20px;}
-.timeline-item.right{left:0;}
-.timeline-item::after{left:0;}
-}
+@media(max-width:768px){.timeline::after{left:8px;}.timeline-item{width:100%;padding-left:30px;padding-right:20px;margin-bottom:20px;}.timeline-item.right{left:0;}.timeline-item::after{left:0;}}
 </style>
-
 </head>
 <body>
+
 <!-- NAVBAR -->
 <div class="navbar flex justify-center space-x-8 text-slate-300">
 <a href="#">Home</a>
 <a href="#impact">Impact</a>
 <a href="#projects">Projects</a>
 <a href="#expertise">Expertise</a>
+<a href="#skills">Skills</a>
 <a href="#experience">Experience</a>
 <a href="#github">GitHub</a>
 <a href="#contact">Contact</a>
 </div>
 
 <!-- HERO -->
-
 <section class="section flex flex-col md:flex-row items-center justify-between">
 <div class="md:w-2/3" data-aos="fade-right">
 <h1 class="text-5xl font-bold">Rishi Aryal</h1>
@@ -125,7 +61,6 @@ top:20px;
 </section>
 
 <!-- IMPACT -->
-
 <section id="impact" class="section" data-aos="fade-up">
 <h2 class="text-3xl text-center font-semibold mb-10">Global Impact</h2>
 <div class="grid md:grid-cols-4 gap-6 text-center">
@@ -137,14 +72,12 @@ top:20px;
 </section>
 
 <!-- INTERACTIVE WORLD MAP -->
-
 <section id="map" class="section" data-aos="fade-up">
 <h2 class="text-3xl text-center font-semibold mb-6">Global Project Map</h2>
 <div id="worldMap" style="height:400px; border-radius:12px; box-shadow:0 20px 40px rgba(0,0,0,0.5);"></div>
 </section>
 
 <!-- PROJECTS -->
-
 <section id="projects" class="section" data-aos="fade-up">
 <h2 class="text-3xl text-center font-semibold mb-12">Flagship Projects & GitHub Repos</h2>
 <div class="grid md:grid-cols-3 gap-6 mb-10">
@@ -156,7 +89,6 @@ top:20px;
 </section>
 
 <!-- EXPERTISE -->
-
 <section id="expertise" class="section" data-aos="fade-up">
 <h2 class="text-3xl text-center font-semibold mb-10">Technology & Delivery Expertise</h2>
 <div class="grid md:grid-cols-4 gap-4 text-center">
@@ -171,8 +103,79 @@ top:20px;
 </div>
 </section>
 
-<!-- EXPERIENCE -->
+<!-- SKILLS & CERTIFICATIONS -->
+<section id="skills" class="section" data-aos="fade-up">
+<h2 class="text-3xl text-center font-semibold mb-10">Skills & Certifications</h2>
 
+<!-- Skills Progress Bars -->
+<div class="grid md:grid-cols-2 gap-6 mb-10">
+<!-- Example: Agile / Scrum -->
+<div>
+<h3 class="font-semibold mb-2">Agile / Scrum <span class="text-slate-400">95%</span></h3>
+<div class="w-full bg-slate-700 rounded-full h-4">
+<div class="bg-gradient-to-r from-purple-500 to-cyan-400 h-4 rounded-full" style="width:95%"></div>
+</div>
+</div>
+<div>
+<h3 class="font-semibold mb-2">Jira <span class="text-slate-400">90%</span></h3>
+<div class="w-full bg-slate-700 rounded-full h-4">
+<div class="bg-gradient-to-r from-purple-500 to-cyan-400 h-4 rounded-full" style="width:90%"></div>
+</div>
+</div>
+<div>
+<h3 class="font-semibold mb-2">Python / Django <span class="text-slate-400">90%</span></h3>
+<div class="w-full bg-slate-700 rounded-full h-4">
+<div class="bg-gradient-to-r from-purple-500 to-cyan-400 h-4 rounded-full" style="width:90%"></div>
+</div>
+</div>
+<div>
+<h3 class="font-semibold mb-2">PostgreSQL <span class="text-slate-400">85%</span></h3>
+<div class="w-full bg-slate-700 rounded-full h-4">
+<div class="bg-gradient-to-r from-purple-500 to-cyan-400 h-4 rounded-full" style="width:85%"></div>
+</div>
+</div>
+<div>
+<h3 class="font-semibold mb-2">DevOps / Kubernetes <span class="text-slate-400">80%</span></h3>
+<div class="w-full bg-slate-700 rounded-full h-4">
+<div class="bg-gradient-to-r from-purple-500 to-cyan-400 h-4 rounded-full" style="width:80%"></div>
+</div>
+</div>
+<div>
+<h3 class="font-semibold mb-2">MIS / eCMS / EMIS <span class="text-slate-400">95%</span></h3>
+<div class="w-full bg-slate-700 rounded-full h-4">
+<div class="bg-gradient-to-r from-purple-500 to-cyan-400 h-4 rounded-full" style="width:95%"></div>
+</div>
+</div>
+<div>
+<h3 class="font-semibold mb-2">Data Analytics <span class="text-slate-400">85%</span></h3>
+<div class="w-full bg-slate-700 rounded-full h-4">
+<div class="bg-gradient-to-r from-purple-500 to-cyan-400 h-4 rounded-full" style="width:85%"></div>
+</div>
+</div>
+</div>
+
+<!-- Certifications -->
+<div class="grid md:grid-cols-3 gap-6">
+<div class="card hover:scale-105 transition-transform cursor-pointer">
+<h3 class="font-semibold text-lg mb-2">Certified Scrum Master (CSM)</h3>
+<p class="text-slate-400">Scrum Alliance</p>
+</div>
+<div class="card hover:scale-105 transition-transform cursor-pointer">
+<h3 class="font-semibold text-lg mb-2">Google Data Analytics Professional Certificate</h3>
+<p class="text-slate-400">Google / Coursera</p>
+</div>
+<div class="card hover:scale-105 transition-transform cursor-pointer">
+<h3 class="font-semibold text-lg mb-2">Google Project Management Professional Certificate</h3>
+<p class="text-slate-400">Google / Coursera</p>
+</div>
+<div class="card hover:scale-105 transition-transform cursor-pointer">
+<h3 class="font-semibold text-lg mb-2">Python for Everybody – Specialization</h3>
+<p class="text-slate-400">University of Michigan / Coursera</p>
+</div>
+</div>
+</section>
+
+<!-- EXPERIENCE -->
 <section id="experience" class="section" data-aos="fade-up">
 <h2 class="text-3xl text-center font-semibold mb-10">Professional Experience</h2>
 <div class="timeline">
@@ -184,7 +187,6 @@ top:20px;
 </section>
 
 <!-- DEVOPS PIPELINE -->
-
 <section id="devops" class="section" data-aos="fade-up">
 <h2 class="text-3xl text-center font-semibold mb-6">DevOps & Deployment Pipeline</h2>
 <div class="flex justify-center mt-6">
@@ -194,14 +196,12 @@ top:20px;
 </section>
 
 <!-- GITHUB -->
-
 <section id="github" class="section text-center" data-aos="fade-up">
 <h2 class="text-3xl font-semibold mb-6">GitHub Activity</h2>
 <img src="https://ghchart.rshah.org/RishiAryal24" alt="GitHub chart" class="mx-auto">
 </section>
 
 <!-- CONTACT -->
-
 <section id="contact" class="section text-center" data-aos="fade-up">
 <h2 class="text-3xl font-semibold mb-6">Contact</h2>
 <p class="text-slate-400">Email: aryalrishi29@gmail.com</p>
@@ -213,9 +213,9 @@ top:20px;
 </section>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
 <script>
 AOS.init();
+
 // Load GitHub repos automatically
 fetch("https://api.github.com/users/RishiAryal24/repos")
 .then(res=>res.json())
@@ -239,6 +239,5 @@ var projects=[
 ];
 projects.forEach(function(proj){L.marker(proj.coords).addTo(map).bindPopup('<b>'+proj.title+'</b><br>'+proj.description);});
 </script>
-
 </body>
 </html>
