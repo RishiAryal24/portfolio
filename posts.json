@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Automating CI/CD with GitHub Actions",
+    "snippet": "Step-by-step guide to build a CI/CD pipeline for Python & Django projects using GitHub Actions and Docker.",
+    "date": "2026-02-01",
+    "category": "DevOps",
+    "link": "blog/ci-cd-github-actions.html"
+  },
+  {
+    "title": "Data Analysis with Python & Pandas",
+    "snippet": "Step-by-step guide to analyzing large datasets with Python and Pandas to generate actionable insights.",
+    "date": "2026-01-15",
+    "category": "Python",
+    "link": "blog/python-data-analysis.html"
+  },
+  {
+    "title": "Building REST APIs with Django & DRF",
+    "snippet": "Create scalable REST APIs using Django Rest Framework with authentication, serializers, and optimized queries.",
+    "date": "2025-12-30",
+    "category": "Full-Stack",
+    "link": "blog/django-rest-apis.html"
+  },
+  {
+    "title": "Deploying Python Apps on Kubernetes",
+    "snippet": "Learn how to containerize Python apps and deploy them on Kubernetes clusters with best practices.",
+    "date": "2025-12-10",
+    "category": "DevOps",
+    "link": "blog/python-k8s-deployment.html"
+  }
+]
