@@ -2,15 +2,12 @@
 
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Rishi Aryal | Senior Software Project Manager</title>
-
 <script src="https://cdn.tailwindcss.com"></script>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
 body{
@@ -19,7 +16,6 @@ background:#0f172a;
 color:white;
 scroll-behavior:smooth;
 }
-
 .navbar{
 position:fixed;
 top:0;
@@ -28,45 +24,77 @@ background:#020617;
 padding:16px;
 z-index:100;
 }
-
+.navbar a{transition:0.3s;}
+.navbar a:hover{color:#6366f1;}
 .section{
 max-width:1200px;
 margin:auto;
 padding:120px 20px;
 }
-
 .card{
 background:#1e293b;
 padding:24px;
 border-radius:12px;
 transition:0.3s;
 }
-
 .card:hover{
 transform:translateY(-6px);
 box-shadow:0 20px 40px rgba(0,0,0,0.5);
 }
-
 .gradient{
 background:linear-gradient(135deg,#6366f1,#06b6d4);
 }
-
-img.profile{
-width:160px;
-height:160px;
-object-fit:cover;
-border-radius:50%;
-border:4px solid #6366f1;
-margin-bottom:16px;
+img.hero-img{
+width:360px;
+max-width:100%;
+border-radius:12px;
+box-shadow:0 20px 40px rgba(0,0,0,0.5);
 }
-
+.timeline {
+position: relative;
+margin-left: 0;
+margin-right: 0;
+}
+.timeline::after{
+content: '';
+position: absolute;
+width:4px;
+background:#6366f1;
+top:0;
+bottom:0;
+left:50%;
+margin-left:-2px;
+}
+.timeline-item{
+position: relative;
+width:50%;
+padding:20px 40px;
+box-sizing:border-box;
+}
+.timeline-item.left{left:0;}
+.timeline-item.right{left:50%;}
+.timeline-item::after{
+content: '';
+position: absolute;
+width:20px;
+height:20px;
+right:-10px;
+background:#6366f1;
+border-radius:50%;
+top:20px;
+}
+.timeline-item.right::after{left:-10px;}
+@media(max-width:768px){
+.timeline::after{left:8px;}
+.timeline-item{width:100%;padding-left:30px;padding-right:20px;margin-bottom:20px;}
+.timeline-item.right{left:0;}
+.timeline-item::after{left:0;}
+}
 </style>
 
 </head>
 <body>
-
 <!-- NAVBAR -->
-
 <div class="navbar flex justify-center space-x-8 text-slate-300">
 <a href="#">Home</a>
 <a href="#impact">Impact</a>
@@ -79,167 +107,106 @@ margin-bottom:16px;
 
 <!-- HERO -->
 
-<section class="section text-center">
-
-<img src="assets/profile.jpg" alt="Rishi Aryal" class="profile mx-auto">
-
-<h1 class="text-5xl font-bold">
-Rishi Aryal
-</h1>
-
-<p class="text-xl text-slate-300 mt-4">
-Senior Software Project Manager • Enterprise Systems Architect
-</p>
-
-<p class="text-slate-400 mt-6 max-w-2xl mx-auto">
-15+ years delivering enterprise digital systems for governments, UN agencies, and international organizations.
-</p>
-
+<section class="section flex flex-col md:flex-row items-center justify-between">
+<div class="md:w-2/3" data-aos="fade-right">
+<h1 class="text-5xl font-bold">Rishi Aryal</h1>
+<p class="text-xl text-slate-300 mt-4">Senior Software Project Manager • Enterprise Systems Architect</p>
+<p class="text-slate-400 mt-6 max-w-xl">15+ years delivering enterprise digital systems for governments, UN agencies, and international organizations. Specialized in Agile delivery, Jira-based backlog management, and large-scale MIS platforms including eCMS, EMIS, and health information systems.</p>
 <div class="mt-10">
-<a href="https://github.com/RishiAryal24" target="_blank" class="gradient px-6 py-3 rounded-lg mr-4">
-GitHub
-</a>
-<a href="#projects" class="border border-slate-600 px-6 py-3 rounded-lg">
-View Work
-</a>
+<a href="https://github.com/RishiAryal24" target="_blank" class="gradient px-6 py-3 rounded-lg mr-4">GitHub</a>
+<a href="#projects" class="border border-slate-600 px-6 py-3 rounded-lg">View Work</a>
 </div>
-
+</div>
+<div class="md:w-1/3 mt-8 md:mt-0" data-aos="fade-left">
+<img src="assets/profile.jpg" alt="Rishi Aryal" class="hero-img">
+</div>
 </section>
 
 <!-- IMPACT -->
 
-<section id="impact" class="section">
-
-<h2 class="text-3xl text-center font-semibold mb-10">
-Global Impact
-</h2>
-
+<section id="impact" class="section" data-aos="fade-up">
+<h2 class="text-3xl text-center font-semibold mb-10">Global Impact</h2>
 <div class="grid md:grid-cols-4 gap-6 text-center">
-
-<div class="card">
-<h3 class="text-3xl font-bold">$10M+</h3>
-<p class="text-slate-400">Programs Delivered</p>
+<div class="card"><h3 class="text-3xl font-bold">$10M+</h3><p class="text-slate-400 mt-2">Programs Delivered</p></div>
+<div class="card"><h3 class="text-3xl font-bold">15+</h3><p class="text-slate-400 mt-2">Years Experience</p></div>
+<div class="card"><h3 class="text-3xl font-bold">5+</h3><p class="text-slate-400 mt-2">International Organizations</p></div>
+<div class="card"><h3 class="text-3xl font-bold">2 Countries</h3><p class="text-slate-400 mt-2">Nepal & Timor-Leste</p></div>
 </div>
-
-<div class="card">
-<h3 class="text-3xl font-bold">15+</h3>
-<p class="text-slate-400">Years Experience</p>
-</div>
-
-<div class="card">
-<h3 class="text-3xl font-bold">5+</h3>
-<p class="text-slate-400">International Organizations</p>
-</div>
-
-<div class="card">
-<h3 class="text-3xl font-bold">2 Countries</h3>
-<p class="text-slate-400">Nepal & Timor-Leste</p>
-</div>
-
-</div>
-
 </section>
 
 <!-- PROJECTS -->
 
-<section id="projects" class="section">
-
-<h2 class="text-3xl text-center font-semibold mb-12">
-GitHub Projects
-</h2>
-
+<section id="projects" class="section" data-aos="fade-up">
+<h2 class="text-3xl text-center font-semibold mb-12">Flagship Projects & GitHub Repos</h2>
+<div class="grid md:grid-cols-3 gap-6 mb-10">
+<div class="card"><h3 class="text-xl font-semibold">Electronic Case Management System</h3><p class="text-slate-400 mt-2">Nationwide legal case management platform deployed for human rights complaint handling.</p><p class="text-slate-500 mt-2 text-sm">Client: PDHJ, Timor-Leste</p></div>
+<div class="card"><h3 class="text-xl font-semibold">Education Management Information System</h3><p class="text-slate-400 mt-2">Centralized national EMIS platform integrating multiple datasets and enabling data-driven planning.</p><p class="text-slate-500 mt-2 text-sm">Client: Ministry of Education, Timor-Leste</p></div>
+<div class="card"><h3 class="text-xl font-semibold">Social Protection MIS</h3><p class="text-slate-400 mt-2">Integrated national management information system supporting cash transfer and beneficiary tracking.</p><p class="text-slate-500 mt-2 text-sm">Client: World Bank Program</p></div>
+</div>
 <div id="repoContainer" class="grid md:grid-cols-3 gap-6"></div>
-
 </section>
 
 <!-- EXPERTISE -->
 
-<section id="expertise" class="section">
-
-<h2 class="text-3xl text-center font-semibold mb-10">
-Technology & Delivery Expertise
-</h2>
-
+<section id="expertise" class="section" data-aos="fade-up">
+<h2 class="text-3xl text-center font-semibold mb-10">Technology & Delivery Expertise</h2>
 <div class="grid md:grid-cols-4 gap-4 text-center">
-
 <div class="card">Agile / Scrum</div>
 <div class="card">Jira</div>
 <div class="card">Python / Django</div>
 <div class="card">PostgreSQL</div>
 <div class="card">Kubernetes</div>
 <div class="card">DevOps</div>
-<div class="card">MIS Platforms</div>
+<div class="card">MIS Architecture</div>
 <div class="card">Data Analytics</div>
-
 </div>
-
 </section>
 
 <!-- EXPERIENCE -->
 
-<section id="experience" class="section">
-
-<h2 class="text-3xl text-center font-semibold mb-10">
-Professional Experience
-</h2>
-
-<div class="space-y-6 max-w-3xl mx-auto">
-
-<div class="card">
-<h3 class="font-semibold text-lg">Senior Software Project Manager</h3>
-<p class="text-slate-400 mt-2">Leading enterprise healthcare and MIS systems for international development programs.</p>
+<section id="experience" class="section" data-aos="fade-up">
+<h2 class="text-3xl text-center font-semibold mb-10">Professional Experience</h2>
+<div class="timeline">
+<div class="timeline-item left card"><h3 class="font-semibold text-lg">Senior Software Project Manager – Freelance</h3><p class="text-slate-400 mt-1">2019–Present | Kathmandu, Nepal. Leading enterprise healthcare and MIS systems for US-based health informatics organizations. Portfolio ~$10M.</p></div>
+<div class="timeline-item right card"><h3 class="font-semibold text-lg">ICT Specialist – PDHJ</h3><p class="text-slate-400 mt-1">2015–2018 | Timor-Leste. Managed nationwide rollout of electronic case management system; improved institutional capacity and adoption.</p></div>
+<div class="timeline-item left card"><h3 class="font-semibold text-lg">UNDP / UNICEF / World Bank Consultant</h3><p class="text-slate-400 mt-1">2011–2015 | Timor-Leste & Nepal. Delivered EMIS, MIS, health information systems, and social protection platforms; supported governance and digital transformation.</p></div>
+<div class="timeline-item right card"><h3 class="font-semibold text-lg">Government of Nepal – Ministry of Health</h3><p class="text-slate-400 mt-1">2007–2010 | Nepal. Managed HMIS system administration, disaster recovery, Windows Server, SQL Server, virtualization, and internal web applications.</p></div>
 </div>
+</section>
 
-<div class="card">
-<h3 class="font-semibold text-lg">ICT Specialist – PDHJ</h3>
-<p class="text-slate-400 mt-2">Managed nationwide electronic case management system rollout.</p>
+<!-- DEVOPS PIPELINE -->
+
+<section id="devops" class="section" data-aos="fade-up">
+<h2 class="text-3xl text-center font-semibold mb-6">DevOps & Deployment Pipeline</h2>
+<div class="flex justify-center mt-6">
+<img src="assets/devops-pipeline.png" alt="DevOps Pipeline" class="rounded-lg shadow-lg max-w-full">
 </div>
-
-<div class="card">
-<h3 class="font-semibold text-lg">UNDP / UNICEF / World Bank Consultant</h3>
-<p class="text-slate-400 mt-2">Delivered multiple national digital systems including EMIS and social protection MIS.</p>
-</div>
-
-</div>
-
+<p class="text-slate-400 text-center mt-4">Illustrates CI/CD, containerization, and deployment flows used in enterprise systems.</p>
 </section>
 
 <!-- GITHUB -->
 
-<section id="github" class="section text-center">
-
-<h2 class="text-3xl font-semibold mb-6">
-GitHub Activity
-</h2>
-
-<img src="https://ghchart.rshah.org/RishiAryal24" alt="GitHub chart">
-
+<section id="github" class="section text-center" data-aos="fade-up">
+<h2 class="text-3xl font-semibold mb-6">GitHub Activity</h2>
+<img src="https://ghchart.rshah.org/RishiAryal24" alt="GitHub chart" class="mx-auto">
 </section>
 
 <!-- CONTACT -->
 
-<section id="contact" class="section text-center">
-
-<h2 class="text-3xl font-semibold mb-6">
-Contact
-</h2>
-
-<p class="text-slate-400">
-Email: aryalrishi29@gmail.com
-</p>
-
-<p class="mt-2">
-Kathmandu, Nepal
-</p>
-
+<section id="contact" class="section text-center" data-aos="fade-up">
+<h2 class="text-3xl font-semibold mb-6">Contact</h2>
+<p class="text-slate-400">Email: aryalrishi29@gmail.com</p>
+<p class="mt-2">Kathmandu, Nepal</p>
 <div class="mt-6">
 <a href="https://github.com/RishiAryal24" class="text-blue-400 mr-6">GitHub</a>
 <a href="https://linkedin.com/in/rishi-aryal-nepal" class="text-blue-400">LinkedIn</a>
 </div>
-
 </section>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 <script>
+AOS.init();
 // Load GitHub repos automatically
 fetch("https://api.github.com/users/RishiAryal24/repos")
 .then(res=>res.json())
@@ -248,11 +215,7 @@ const container=document.getElementById("repoContainer")
 data.slice(0,6).forEach(repo=>{
 const card=document.createElement("div")
 card.className="card"
-card.innerHTML=`
-<h3 class="text-xl font-semibold">${repo.name}</h3>
-<p class="text-slate-400 mt-2">${repo.description || "GitHub repository"}</p>
-<a href="${repo.html_url}" target="_blank" class="text-blue-400 mt-3 inline-block">View Repository →</a>
-`
+card.innerHTML=`<h3 class="text-xl font-semibold">${repo.name}</h3><p class="text-slate-400 mt-2">${repo.description || "GitHub repository"}</p><a href="${repo.html_url}" target="_blank" class="text-blue-400 mt-3 inline-block">View Repository →</a>`
 container.appendChild(card)
 })
 })
