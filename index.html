@@ -5,72 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rishi Aryal | Senior Python Developer & Full Stack Developer</title>
   <meta name="description" content="Rishi Aryal – Senior Python Developer, Full Stack Developer, DevOps Consultant with 10+ years of experience in software development, Agile, and cloud-native solutions.">
-  <meta name="keywords" content="Rishi Aryal, Python Developer, Full Stack Developer, DevOps, Agile, IT Consultant, Projects, Portfolio">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="keywords" content="Rishi Aryal, Python Developer, Full Stack Developer, DevOps, Agile, IT Consultant, Portfolio, Projects">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS Animations -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Swiper.js for carousels -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
-    .hero { height: 100vh; display: flex; align-items: center; justify-content: center; background: #0d6efd; color: white; text-align: center; }
-    .hero h1 { font-size: 3rem; font-weight: 700; }
-    .hero p { font-size: 1.2rem; margin-bottom: 20px; }
-    section { padding: 80px 0; }
-    .skill-bar { height: 25px; border-radius: 25px; }
-    .timeline { position: relative; padding-left: 30px; }
-    .timeline::before { content: ''; position: absolute; left: 12px; top: 0; bottom: 0; width: 4px; background: #0d6efd; }
-    .timeline-item { position: relative; margin-bottom: 40px; }
-    .timeline-item::before { content: ''; position: absolute; left: -18px; width: 20px; height: 20px; background: #0d6efd; border-radius: 50%; top: 0; }
-    footer { background: #212529; color: white; padding: 30px 0; text-align: center; }
+    body { scroll-behavior: smooth; font-family: 'Poppins', sans-serif; }
+    .hero-bg { background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%); }
+    .project-card:hover { transform: translateY(-5px); transition: 0.3s; }
+    .skill-circle { position: relative; display: inline-block; width: 120px; height: 120px; }
+    .skill-circle svg { transform: rotate(-90deg); }
   </style>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
+<body class="bg-gray-50">
 
 <!-- Navbar -->
-<nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">Rishi Aryal</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-        <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
+<nav class="fixed w-full bg-white shadow z-50">
+  <div class="container mx-auto flex justify-between items-center p-4">
+    <a href="#" class="text-2xl font-bold text-indigo-600">Rishi Aryal</a>
+    <ul class="flex space-x-6 text-gray-700 font-medium">
+      <li><a href="#hero" class="hover:text-indigo-600">Home</a></li>
+      <li><a href="#about" class="hover:text-indigo-600">About</a></li>
+      <li><a href="#skills" class="hover:text-indigo-600">Skills</a></li>
+      <li><a href="#projects" class="hover:text-indigo-600">Projects</a></li>
+      <li><a href="#experience" class="hover:text-indigo-600">Experience</a></li>
+      <li><a href="#contact" class="hover:text-indigo-600">Contact</a></li>
+    </ul>
   </div>
 </nav>
 
 <!-- Hero Section -->
-<section id="hero" class="hero">
-  <div class="container" data-aos="fade-up">
-    <h1>Rishi Aryal</h1>
-    <p>Senior Python Developer | Full Stack Developer | DevOps Consultant</p>
-    <a href="#projects" class="btn btn-light btn-lg me-2">View Projects</a>
-    <a href="#contact" class="btn btn-outline-light btn-lg">Contact Me</a>
+<section id="hero" class="hero-bg text-white h-screen flex items-center justify-center text-center">
+  <div data-aos="fade-up">
+    <h1 class="text-5xl md:text-6xl font-bold mb-4">Rishi Aryal</h1>
+    <p class="text-xl md:text-2xl mb-6">Senior Python Developer | Full Stack Developer | DevOps Consultant</p>
+    <div class="space-x-4">
+      <a href="#projects" class="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition">View Projects</a>
+      <a href="#contact" class="border border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-indigo-600 transition">Contact Me</a>
+    </div>
   </div>
 </section>
 
 <!-- About Section -->
-<section id="about">
-  <div class="container" data-aos="fade-up">
-    <div class="row align-items-center">
-      <div class="col-md-5">
-        <img src="https://via.placeholder.com/400" alt="Rishi Aryal" class="img-fluid rounded">
-      </div>
-      <div class="col-md-7">
-        <h2>About Me</h2>
-        <p>I am a seasoned ICT professional with over 10 years of experience in software development, project management, Agile methodologies, and DevOps practices. I specialize in Python, Full Stack Development, and building scalable solutions that drive organizational performance.</p>
-        <div class="row text-center mt-4">
-          <div class="col-4"><h3>10+</h3><p>Years Experience</p></div>
-          <div class="col-4"><h3>232</h3><p>Projects Completed</p></div>
-          <div class="col-4"><h3>521</h3><p>Systems Developed</p></div>
+<section id="about" class="py-20 bg-gray-50">
+  <div class="container mx-auto flex flex-col md:flex-row items-center gap-12">
+    <div data-aos="fade-right" class="md:w-1/2">
+      <img src="https://via.placeholder.com/450" alt="Rishi Aryal" class="rounded-xl shadow-lg">
+    </div>
+    <div data-aos="fade-left" class="md:w-1/2">
+      <h2 class="text-4xl font-bold mb-6">About Me</h2>
+      <p class="text-gray-700 mb-4">I am a seasoned ICT professional with over 10 years of experience in Python, Full Stack Development, DevOps, Agile methodology, and cloud-native solutions. I excel in delivering scalable and impactful software solutions.</p>
+      <div class="grid grid-cols-3 gap-6 mt-6 text-center">
+        <div>
+          <h3 class="text-2xl font-bold text-indigo-600">10+</h3>
+          <p class="text-gray-600">Years Experience</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-indigo-600">232</h3>
+          <p class="text-gray-600">Projects Completed</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-indigo-600">521</h3>
+          <p class="text-gray-600">Systems Developed</p>
         </div>
       </div>
     </div>
@@ -78,32 +80,48 @@
 </section>
 
 <!-- Skills Section -->
-<section id="skills" class="bg-light">
-  <div class="container" data-aos="fade-up">
-    <h2 class="text-center mb-5">Skills</h2>
-    <div class="row g-4">
-      <div class="col-md-6">
-        <h5>Python</h5>
-        <div class="progress skill-bar">
-          <div class="progress-bar bg-primary" role="progressbar" style="width: 95%;">95%</div>
+<section id="skills" class="py-20 bg-white">
+  <div class="container mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-12" data-aos="fade-up">Skills</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+      <!-- Python -->
+      <div data-aos="fade-up" data-aos-delay="50">
+        <div class="skill-circle mx-auto">
+          <svg class="w-32 h-32">
+            <circle cx="60" cy="60" r="54" stroke="#e5e7eb" stroke-width="12" fill="none"/>
+            <circle cx="60" cy="60" r="54" stroke="#4f46e5" stroke-width="12" fill="none" stroke-dasharray="339" stroke-dashoffset="17"/>
+          </svg>
+          <p class="mt-4 font-semibold">Python</p>
         </div>
       </div>
-      <div class="col-md-6">
-        <h5>Django</h5>
-        <div class="progress skill-bar">
-          <div class="progress-bar bg-primary" role="progressbar" style="width: 90%;">90%</div>
+      <!-- Django -->
+      <div data-aos="fade-up" data-aos-delay="100">
+        <div class="skill-circle mx-auto">
+          <svg class="w-32 h-32">
+            <circle cx="60" cy="60" r="54" stroke="#e5e7eb" stroke-width="12" fill="none"/>
+            <circle cx="60" cy="60" r="54" stroke="#10b981" stroke-width="12" fill="none" stroke-dasharray="339" stroke-dashoffset="34"/>
+          </svg>
+          <p class="mt-4 font-semibold">Django</p>
         </div>
       </div>
-      <div class="col-md-6">
-        <h5>DevOps / Docker / GitHub Actions</h5>
-        <div class="progress skill-bar">
-          <div class="progress-bar bg-primary" role="progressbar" style="width: 85%;">85%</div>
+      <!-- Full Stack -->
+      <div data-aos="fade-up" data-aos-delay="150">
+        <div class="skill-circle mx-auto">
+          <svg class="w-32 h-32">
+            <circle cx="60" cy="60" r="54" stroke="#e5e7eb" stroke-width="12" fill="none"/>
+            <circle cx="60" cy="60" r="54" stroke="#f59e0b" stroke-width="12" fill="none" stroke-dasharray="339" stroke-dashoffset="34"/>
+          </svg>
+          <p class="mt-4 font-semibold">Full Stack</p>
         </div>
       </div>
-      <div class="col-md-6">
-        <h5>Full Stack Development</h5>
-        <div class="progress skill-bar">
-          <div class="progress-bar bg-primary" role="progressbar" style="width: 90%;">90%</div>
+      <!-- DevOps -->
+      <div data-aos="fade-up" data-aos-delay="200">
+        <div class="skill-circle mx-auto">
+          <svg class="w-32 h-32">
+            <circle cx="60" cy="60" r="54" stroke="#e5e7eb" stroke-width="12" fill="none"/>
+            <circle cx="60" cy="60" r="54" stroke="#ef4444" stroke-width="12" fill="none" stroke-dasharray="339" stroke-dashoffset="50"/>
+          </svg>
+          <p class="mt-4 font-semibold">DevOps</p>
         </div>
       </div>
     </div>
@@ -111,154 +129,57 @@
 </section>
 
 <!-- Projects Section -->
-<section id="projects">
-  <div class="container" data-aos="fade-up">
-    <h2 class="text-center mb-5">Projects</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Mega City Commuter App">
-          <div class="card-body">
-            <h5 class="card-title">Mega City Commuter App</h5>
-            <p class="card-text">City commuter app developed using Agile methodology with Python, Django, React, CI/CD pipelines.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary btn-sm">View Project</a>
-          </div>
+<section id="projects" class="py-20 bg-gray-50">
+  <div class="container mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-12" data-aos="fade-up">Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Project 1 -->
+      <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up">
+        <img src="https://via.placeholder.com/400x250" alt="Mega City Commuter App">
+        <div class="p-6">
+          <h3 class="font-bold text-xl mb-2">Mega City Commuter App</h3>
+          <p class="text-gray-600 mb-4">Agile-based commuter app with Python, Django, React.</p>
+          <a href="#!" class="text-indigo-600 font-semibold hover:underline">View Details</a>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="HMS – Hospital Management System">
-          <div class="card-body">
-            <h5 class="card-title">HMS – Hospital Management System</h5>
-            <p class="card-text">Full Stack system for hospital management with Python, MongoDB, DevOps integration, and automated reports.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary btn-sm">View Project</a>
-          </div>
+      <!-- Project 2 -->
+      <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://via.placeholder.com/400x250" alt="HMS – Hospital Management System">
+        <div class="p-6">
+          <h3 class="font-bold text-xl mb-2">HMS – Hospital Management System</h3>
+          <p class="text-gray-600 mb-4">Full Stack system with MongoDB, Python, DevOps integration.</p>
+          <a href="#!" class="text-indigo-600 font-semibold hover:underline">View Details</a>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Orbital DevOps Platform">
-          <div class="card-body">
-            <h5 class="card-title">Orbital DevOps Platform</h5>
-            <p class="card-text">Production-ready cloud-native DevOps platform with Python, Django, GitHub Actions, and ArgoCD.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary btn-sm">View Project</a>
-          </div>
+      <!-- Project 3 -->
+      <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+        <img src="https://via.placeholder.com/400x250" alt="Orbital DevOps Platform">
+        <div class="p-6">
+          <h3 class="font-bold text-xl mb-2">Orbital DevOps Platform</h3>
+          <p class="text-gray-600 mb-4">Cloud-native DevOps platform with Python, Django, GitHub Actions.</p>
+          <a href="#!" class="text-indigo-600 font-semibold hover:underline">View Details</a>
         </div>
-      </div>
-      <!-- Add more project cards as needed -->
-    </div>
-  </div>
-</section>
-
-<!-- Experience Section -->
-<section id="experience" class="bg-light">
-  <div class="container" data-aos="fade-up">
-    <h2 class="text-center mb-5">Experience</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <h5>IT Consultant – Ombudsman for Human Rights & Justice</h5>
-        <p>2024 – Present | Led digital transformation projects and case management system development in Timor-Leste and Nepal.</p>
-      </div>
-      <div class="timeline-item">
-        <h5>Full Stack Developer & DevOps Consultant – Freelance</h5>
-        <p>2018 – 2024 | Developed scalable web applications, integrated cloud, CI/CD pipelines, and project management solutions.</p>
-      </div>
-      <!-- Add more experience items -->
-    </div>
-  </div>
-</section>
-
-<!-- Testimonials Section -->
-<section id="testimonials">
-  <div class="container" data-aos="fade-up">
-    <h2 class="text-center mb-5">Testimonials</h2>
-    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active text-center">
-          <p class="mb-3">"Rishi is an exceptional developer and project manager. Highly recommended."</p>
-          <h6>- Anant Kumar, IT Project Manager</h6>
-        </div>
-        <div class="carousel-item text-center">
-          <p class="mb-3">"Outstanding expertise in DevOps and Python projects."</p>
-          <h6>- Marcus Jackson, Project Sponsor</h6>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
-    </div>
-  </div>
-</section>
-
-<!-- Certificates Section -->
-<section id="certificates" class="bg-light">
-  <div class="container" data-aos="fade-up">
-    <h2 class="text-center mb-5">Certifications</h2>
-    <div class="row g-4 text-center">
-      <div class="col-md-4">
-        <i class="fas fa-certificate fa-3x mb-2 text-primary"></i>
-        <h5>IBM AI Certificate</h5>
-      </div>
-      <div class="col-md-4">
-        <i class="fas fa-certificate fa-3x mb-2 text-primary"></i>
-        <h5>Google DevOps Certificate</h5>
-      </div>
-      <div class="col-md-4">
-        <i class="fas fa-graduation-cap fa-3x mb-2 text-primary"></i>
-        <h5>Master’s Degree in IT (IGNOU)</h5>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Contact Section -->
-<section id="contact">
-  <div class="container" data-aos="fade-up">
-    <h2 class="text-center mb-5">Contact Me</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <form action="https://formspree.io/f/yourformid" method="POST">
-          <div class="mb-3">
-            <label for="name" class="form-label">Full Name</label>
-            <input type="text" class="form-control" id="name" name="name" required>
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email Address</label>
-            <input type="email" class="form-control" id="email" name="_replyto" value="aryalrishi29@gmial.com" required>
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary w-100">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- Add Experience, Testimonials, Certificates, Contact Sections similarly -->
+<!-- ... -->
 
-<!-- Footer -->
-<footer>
-  <p>&copy; 2026 Rishi Aryal | All Rights Reserved</p>
-  <div class="mt-2">
-    <a href="https://github.com/RishiAryal24" class="text-white me-3"><i class="fab fa-github fa-lg"></i></a>
-    <a href="https://www.linkedin.com/in/rishi-aryal-nepal/" class="text-white"><i class="fab fa-linkedin fa-lg"></i></a>
-  </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- AOS JS -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({ duration: 1000, once: true });
+</script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+  });
 </script>
 </body>
 </html>
