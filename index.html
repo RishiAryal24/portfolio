@@ -1,162 +1,289 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rishi Aryal | Senior Python Developer & Full Stack Developer</title>
-  <meta name="description" content="Rishi Aryal – Senior Python Developer, Full Stack Developer, DevOps Consultant with 10+ years of experience in software development, Agile, and cloud-native solutions.">
-  <meta name="keywords" content="Rishi Aryal, Python Developer, Full Stack Developer, DevOps, Agile, IT Consultant, Portfolio, Projects">
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- AOS Animations -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <!-- Swiper.js for carousels -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
-  <style>
-    body { scroll-behavior: smooth; font-family: 'Poppins', sans-serif; }
-    .hero-bg { background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%); }
-    .project-card:hover { transform: translateY(-5px); transition: 0.3s; }
-    .skill-circle { position: relative; display: inline-block; width: 120px; height: 120px; }
-    .skill-circle svg { transform: rotate(-90deg); }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rishi Aryal | Senior Software Project Manager</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+font-family:'Inter',sans-serif;
+background:#0f172a;
+color:white;
+scroll-behavior:smooth;
+}
+
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+background:#020617;
+padding:16px;
+z-index:100;
+}
+
+.section{
+max-width:1200px;
+margin:auto;
+padding:120px 20px;
+}
+
+.card{
+background:#1e293b;
+padding:24px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 40px rgba(0,0,0,0.5);
+}
+
+.gradient{
+background:linear-gradient(135deg,#6366f1,#06b6d4);
+}
+
+</style>
+
 </head>
-<body class="bg-gray-50">
 
-<!-- Navbar -->
-<nav class="fixed w-full bg-white shadow z-50">
-  <div class="container mx-auto flex justify-between items-center p-4">
-    <a href="#" class="text-2xl font-bold text-indigo-600">Rishi Aryal</a>
-    <ul class="flex space-x-6 text-gray-700 font-medium">
-      <li><a href="#hero" class="hover:text-indigo-600">Home</a></li>
-      <li><a href="#about" class="hover:text-indigo-600">About</a></li>
-      <li><a href="#skills" class="hover:text-indigo-600">Skills</a></li>
-      <li><a href="#projects" class="hover:text-indigo-600">Projects</a></li>
-      <li><a href="#experience" class="hover:text-indigo-600">Experience</a></li>
-      <li><a href="#contact" class="hover:text-indigo-600">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+<body>
 
-<!-- Hero Section -->
-<section id="hero" class="hero-bg text-white h-screen flex items-center justify-center text-center">
-  <div data-aos="fade-up">
-    <h1 class="text-5xl md:text-6xl font-bold mb-4">Rishi Aryal</h1>
-    <p class="text-xl md:text-2xl mb-6">Senior Python Developer | Full Stack Developer | DevOps Consultant</p>
-    <div class="space-x-4">
-      <a href="#projects" class="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition">View Projects</a>
-      <a href="#contact" class="border border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-indigo-600 transition">Contact Me</a>
-    </div>
-  </div>
+<!-- NAVBAR -->
+
+<div class="navbar flex justify-center space-x-8 text-slate-300">
+
+<a href="#">Home</a> <a href="#impact">Impact</a> <a href="#projects">Projects</a> <a href="#expertise">Expertise</a> <a href="#experience">Experience</a> <a href="#github">GitHub</a> <a href="#contact">Contact</a>
+
+</div>
+
+<!-- HERO -->
+
+<section class="section text-center">
+
+<h1 class="text-5xl font-bold">
+Rishi Aryal
+</h1>
+
+<p class="text-xl text-slate-300 mt-4">
+Senior Software Project Manager • Enterprise Systems Architect
+</p>
+
+<p class="text-slate-400 mt-6 max-w-2xl mx-auto">
+15+ years delivering enterprise digital systems for governments, UN agencies, and international organizations.
+</p>
+
+<div class="mt-10">
+
+<a href="https://github.com/RishiAryal24" target="_blank" class="gradient px-6 py-3 rounded-lg mr-4">
+GitHub
+</a>
+
+<a href="#projects" class="border border-slate-600 px-6 py-3 rounded-lg">
+View Work
+</a>
+
+</div>
+
 </section>
 
-<!-- About Section -->
-<section id="about" class="py-20 bg-gray-50">
-  <div class="container mx-auto flex flex-col md:flex-row items-center gap-12">
-    <div data-aos="fade-right" class="md:w-1/2">
-      <img src="./assets/profile.jpg" alt="Rishi Aryal" class="rounded-xl shadow-lg">
-    </div>
-    <div data-aos="fade-left" class="md:w-1/2">
-      <h2 class="text-4xl font-bold mb-6">About Me</h2>
-      <p class="text-gray-700 mb-4">I am a seasoned ICT professional with over 10 years of experience in Python, Full Stack Development, DevOps, Agile methodology, and cloud-native solutions. I excel in delivering scalable and impactful software solutions.</p>
-      <div class="grid grid-cols-3 gap-6 mt-6 text-center">
-        <div>
-          <h3 class="text-2xl font-bold text-indigo-600">10+</h3>
-          <p class="text-gray-600">Years Experience</p>
-        </div>
-        <div>
-          <h3 class="text-2xl font-bold text-indigo-600">232</h3>
-          <p class="text-gray-600">Projects Completed</p>
-        </div>
-        <div>
-          <h3 class="text-2xl font-bold text-indigo-600">521</h3>
-          <p class="text-gray-600">Systems Developed</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- IMPACT -->
+
+<section id="impact" class="section">
+
+<h2 class="text-3xl text-center font-semibold mb-10">
+Global Impact
+</h2>
+
+<div class="grid md:grid-cols-4 gap-6 text-center">
+
+<div class="card">
+<h3 class="text-3xl font-bold">$10M+</h3>
+<p class="text-slate-400">Programs Delivered</p>
+</div>
+
+<div class="card">
+<h3 class="text-3xl font-bold">15+</h3>
+<p class="text-slate-400">Years Experience</p>
+</div>
+
+<div class="card">
+<h3 class="text-3xl font-bold">5+</h3>
+<p class="text-slate-400">International Organizations</p>
+</div>
+
+<div class="card">
+<h3 class="text-3xl font-bold">2 Countries</h3>
+<p class="text-slate-400">Nepal & Timor-Leste</p>
+</div>
+
+</div>
+
 </section>
 
-<!-- Skills Section -->
-<section id="skills" class="py-20 bg-white">
-  <div class="container mx-auto text-center">
-    <h2 class="text-4xl font-bold mb-12" data-aos="fade-up">Skills</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
-      <!-- Python -->
-      <div data-aos="fade-up" data-aos-delay="50">
-        <div class="skill-circle mx-auto">
-          <svg class="w-32 h-32">
-            <circle cx="60" cy="60" r="54" stroke="#e5e7eb" stroke-width="12" fill="none"/>
-            <circle cx="60" cy="60" r="54" stroke="#4f46e5" stroke-width="12" fill="none" stroke-dasharray="339" stroke-dashoffset="17"/>
-          </svg>
-          <p class="mt-4 font-semibold">Python</p>
-        </div>
-      </div>
-      <!-- Django -->
-      <div data-aos="fade-up" data-aos-delay="100">
-        <div class="skill-circle mx-auto">
-          <svg class="w-32 h-32">
-            <circle cx="60" cy="60" r="54" stroke="#e5e7eb" stroke-width="12" fill="none"/>
-            <circle cx="60" cy="60" r="54" stroke="#10b981" stroke-width="12" fill="none" stroke-dasharray="339" stroke-dashoffset="34"/>
-          </svg>
-          <p class="mt-4 font-semibold">Django</p>
-        </div>
-      </div>
-      <!-- Full Stack -->
-      <div data-aos="fade-up" data-aos-delay="150">
-        <div class="skill-circle mx-auto">
-          <svg class="w-32 h-32">
-            <circle cx="60" cy="60" r="54" stroke="#e5e7eb" stroke-width="12" fill="none"/>
-            <circle cx="60" cy="60" r="54" stroke="#f59e0b" stroke-width="12" fill="none" stroke-dasharray="339" stroke-dashoffset="34"/>
-          </svg>
-          <p class="mt-4 font-semibold">Full Stack</p>
-        </div>
-      </div>
-      <!-- DevOps -->
-      <div data-aos="fade-up" data-aos-delay="200">
-        <div class="skill-circle mx-auto">
-          <svg class="w-32 h-32">
-            <circle cx="60" cy="60" r="54" stroke="#e5e7eb" stroke-width="12" fill="none"/>
-            <circle cx="60" cy="60" r="54" stroke="#ef4444" stroke-width="12" fill="none" stroke-dasharray="339" stroke-dashoffset="50"/>
-          </svg>
-          <p class="mt-4 font-semibold">DevOps</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- PROJECTS -->
+
+<section id="projects" class="section">
+
+<h2 class="text-3xl text-center font-semibold mb-12">
+GitHub Projects
+</h2>
+
+<div id="repoContainer" class="grid md:grid-cols-3 gap-6"></div>
+
 </section>
 
-<!-- GitHub Projects Section -->
-<section id="projects" class="py-20 bg-gray-50">
-  <div class="container mx-auto text-center">
-    <h2 class="text-4xl font-bold mb-12">My GitHub Projects</h2>
+<!-- EXPERTISE -->
 
-    <div id="github-projects" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+<section id="expertise" class="section">
 
-    <div class="mt-10">
-      <a href="https://github.com/RishiAryal24" target="_blank"
-        class="text-indigo-600 font-bold hover:underline">
-        View All Projects on GitHub →
-      </a>
-    </div>
-  </div>
+<h2 class="text-3xl text-center font-semibold mb-10">
+Technology & Delivery Expertise
+</h2>
+
+<div class="grid md:grid-cols-4 gap-4 text-center">
+
+<div class="card">Agile / Scrum</div>
+<div class="card">Jira</div>
+<div class="card">Python / Django</div>
+<div class="card">PostgreSQL</div>
+<div class="card">Kubernetes</div>
+<div class="card">DevOps</div>
+<div class="card">MIS Platforms</div>
+<div class="card">Data Analytics</div>
+
+</div>
+
 </section>
 
-<!-- AOS JS -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<!-- EXPERIENCE -->
+
+<section id="experience" class="section">
+
+<h2 class="text-3xl text-center font-semibold mb-10">
+Professional Experience
+</h2>
+
+<div class="space-y-6 max-w-3xl mx-auto">
+
+<div class="card">
+
+<h3 class="font-semibold text-lg">
+Senior Software Project Manager
+</h3>
+
+<p class="text-slate-400">
+Leading enterprise healthcare and MIS systems for international development programs.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3 class="font-semibold text-lg">
+ICT Specialist – PDHJ
+</h3>
+
+<p class="text-slate-400">
+Managed nationwide electronic case management system rollout.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3 class="font-semibold text-lg">
+UNDP / UNICEF / World Bank Consultant
+</h3>
+
+<p class="text-slate-400">
+Delivered multiple national digital systems including EMIS and social protection MIS.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GITHUB -->
+
+<section id="github" class="section text-center">
+
+<h2 class="text-3xl font-semibold mb-6">
+GitHub Activity
+</h2>
+
+<img src="https://ghchart.rshah.org/RishiAryal24" alt="GitHub chart">
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="section text-center">
+
+<h2 class="text-3xl font-semibold mb-6">
+Contact
+</h2>
+
+<p class="text-slate-400">
+Email: aryalrishi29@gmail.com
+</p>
+
+<p class="mt-2">
+Kathmandu, Nepal
+</p>
+
+<div class="mt-6">
+
+<a href="https://github.com/RishiAryal24" class="text-blue-400 mr-6">
+GitHub
+</a>
+
+<a href="https://linkedin.com/in/rishi-aryal-nepal" class="text-blue-400">
+LinkedIn
+</a>
+
+</div>
+
+</section>
+
 <script>
-  AOS.init({ duration: 1000, once: true });
+
+fetch("https://api.github.com/users/RishiAryal24/repos")
+.then(res=>res.json())
+.then(data=>{
+
+const container=document.getElementById("repoContainer")
+
+data.slice(0,6).forEach(repo=>{
+
+const card=document.createElement("div")
+
+card.className="card"
+
+card.innerHTML=`
+<h3 class="text-xl font-semibold">${repo.name}</h3>
+<p class="text-slate-400 mt-2">${repo.description || "GitHub repository"}</p>
+<a href="${repo.html_url}" target="_blank" class="text-blue-400 mt-3 inline-block">View Repository →</a>
+`
+
+container.appendChild(card)
+
+})
+
+})
+
 </script>
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script>
-  const swiper = new Swiper('.swiper', {
-    loop: true,
-    pagination: { el: '.swiper-pagination', clickable: true },
-    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-  });
-</script>
+
 </body>
 </html>
