@@ -27,6 +27,7 @@ img.hero-img{width:360px;max-width:100%;border-radius:12px;box-shadow:0 20px 40p
 .timeline-item.right{left:50%;}
 .timeline-item::after{content: '';position: absolute;width:20px;height:20px;right:-10px;background:#6366f1;border-radius:50%;top:20px;}
 .timeline-item.right::after{left:-10px;}
+.skill-bar{width:0;}
 @media(max-width:768px){.timeline::after{left:8px;}.timeline-item{width:100%;padding-left:30px;padding-right:20px;margin-bottom:20px;}.timeline-item.right{left:0;}.timeline-item::after{left:0;}}
 </style>
 </head>
@@ -79,13 +80,29 @@ img.hero-img{width:360px;max-width:100%;border-radius:12px;box-shadow:0 20px 40p
 
 <!-- PROJECTS -->
 <section id="projects" class="section" data-aos="fade-up">
-<h2 class="text-3xl text-center font-semibold mb-12">Flagship Projects & GitHub Repos</h2>
-<div class="grid md:grid-cols-3 gap-6 mb-10">
-<div class="card"><h3 class="text-xl font-semibold">Electronic Case Management System</h3><p class="text-slate-400 mt-2">Nationwide legal case management platform deployed for human rights complaint handling.</p><p class="text-slate-500 mt-2 text-sm">Client: PDHJ, Timor-Leste</p></div>
-<div class="card"><h3 class="text-xl font-semibold">Education Management Information System</h3><p class="text-slate-400 mt-2">Centralized national EMIS platform integrating multiple datasets and enabling data-driven planning.</p><p class="text-slate-500 mt-2 text-sm">Client: Ministry of Education, Timor-Leste</p></div>
-<div class="card"><h3 class="text-xl font-semibold">Social Protection MIS</h3><p class="text-slate-400 mt-2">Integrated national management information system supporting cash transfer and beneficiary tracking.</p><p class="text-slate-500 mt-2 text-sm">Client: World Bank Program</p></div>
+<h2 class="text-3xl text-center font-semibold mb-12">Flagship Projects</h2>
+<div class="grid md:grid-cols-2 gap-6">
+  <div class="card">
+    <h3 class="text-xl font-semibold">Electronic Case Management System</h3>
+    <p class="text-slate-400 mt-2">Nationwide legal case management platform deployed for human rights complaint handling.</p>
+    <p class="text-slate-500 mt-2 text-sm">Client: PDHJ, Timor-Leste | Value: USD 1.46M</p>
+  </div>
+  <div class="card">
+    <h3 class="text-xl font-semibold">Education Management Information System (EMIS)</h3>
+    <p class="text-slate-400 mt-2">Centralized national EMIS platform integrating multiple datasets and enabling data-driven planning.</p>
+    <p class="text-slate-500 mt-2 text-sm">Client: Ministry of Education, Timor-Leste</p>
+  </div>
+  <div class="card">
+    <h3 class="text-xl font-semibold">Social Protection MIS</h3>
+    <p class="text-slate-400 mt-2">Integrated national management information system supporting cash transfer and beneficiary tracking.</p>
+    <p class="text-slate-500 mt-2 text-sm">Client: World Bank Program</p>
+  </div>
+  <div class="card">
+    <h3 class="text-xl font-semibold">Multi-Tenant Orbital Platform</h3>
+    <p class="text-slate-400 mt-2">Enterprise-ready, cloud-native, multi-tenant platform for Django applications with CI/CD pipelines and DevOps integration.</p>
+    <p class="text-slate-500 mt-2 text-sm">Internal / Enterprise Project</p>
+  </div>
 </div>
-<div id="repoContainer" class="grid md:grid-cols-3 gap-6"></div>
 </section>
 
 <!-- EXPERTISE -->
@@ -107,68 +124,67 @@ img.hero-img{width:360px;max-width:100%;border-radius:12px;box-shadow:0 20px 40p
 <section id="skills" class="section" data-aos="fade-up">
 <h2 class="text-3xl text-center font-semibold mb-10">Skills & Certifications</h2>
 
-<!-- Skills Progress Bars -->
 <div class="grid md:grid-cols-2 gap-6 mb-10">
-<!-- Example: Agile / Scrum -->
+<!-- Skills Progress Bars -->
 <div>
 <h3 class="font-semibold mb-2">Agile / Scrum <span class="text-slate-400">95%</span></h3>
 <div class="w-full bg-slate-700 rounded-full h-4">
-<div class="bg-gradient-to-r from-purple-500 to-cyan-400 h-4 rounded-full" style="width:95%"></div>
+<div class="bg-gradient-to-r from-purple-500 to-cyan-400 h-4 rounded-full skill-bar" data-width="95%"></div>
 </div>
 </div>
 <div>
 <h3 class="font-semibold mb-2">Jira <span class="text-slate-400">90%</span></h3>
 <div class="w-full bg-slate-700 rounded-full h-4">
-<div class="bg-gradient-to-r from-purple-500 to-cyan-400 h-4 rounded-full" style="width:90%"></div>
+<div class="bg-gradient-to-r from-purple-500 to-cyan-400 h-4 rounded-full skill-bar" data-width="90%"></div>
 </div>
 </div>
 <div>
 <h3 class="font-semibold mb-2">Python / Django <span class="text-slate-400">90%</span></h3>
 <div class="w-full bg-slate-700 rounded-full h-4">
-<div class="bg-gradient-to-r from-purple-500 to-cyan-400 h-4 rounded-full" style="width:90%"></div>
+<div class="bg-gradient-to-r from-purple-500 to-cyan-400 h-4 rounded-full skill-bar" data-width="90%"></div>
 </div>
 </div>
 <div>
 <h3 class="font-semibold mb-2">PostgreSQL <span class="text-slate-400">85%</span></h3>
 <div class="w-full bg-slate-700 rounded-full h-4">
-<div class="bg-gradient-to-r from-purple-500 to-cyan-400 h-4 rounded-full" style="width:85%"></div>
+<div class="bg-gradient-to-r from-purple-500 to-cyan-400 h-4 rounded-full skill-bar" data-width="85%"></div>
 </div>
 </div>
 <div>
 <h3 class="font-semibold mb-2">DevOps / Kubernetes <span class="text-slate-400">80%</span></h3>
 <div class="w-full bg-slate-700 rounded-full h-4">
-<div class="bg-gradient-to-r from-purple-500 to-cyan-400 h-4 rounded-full" style="width:80%"></div>
+<div class="bg-gradient-to-r from-purple-500 to-cyan-400 h-4 rounded-full skill-bar" data-width="80%"></div>
 </div>
 </div>
 <div>
 <h3 class="font-semibold mb-2">MIS / eCMS / EMIS <span class="text-slate-400">95%</span></h3>
 <div class="w-full bg-slate-700 rounded-full h-4">
-<div class="bg-gradient-to-r from-purple-500 to-cyan-400 h-4 rounded-full" style="width:95%"></div>
+<div class="bg-gradient-to-r from-purple-500 to-cyan-400 h-4 rounded-full skill-bar" data-width="95%"></div>
 </div>
 </div>
 <div>
 <h3 class="font-semibold mb-2">Data Analytics <span class="text-slate-400">85%</span></h3>
 <div class="w-full bg-slate-700 rounded-full h-4">
-<div class="bg-gradient-to-r from-purple-500 to-cyan-400 h-4 rounded-full" style="width:85%"></div>
+<div class="bg-gradient-to-r from-purple-500 to-cyan-400 h-4 rounded-full skill-bar" data-width="85%"></div>
 </div>
 </div>
 </div>
 
 <!-- Certifications -->
 <div class="grid md:grid-cols-3 gap-6">
-<div class="card hover:scale-105 transition-transform cursor-pointer">
+<div class="card certification hover:scale-105 transition-transform cursor-pointer">
 <h3 class="font-semibold text-lg mb-2">Certified Scrum Master (CSM)</h3>
 <p class="text-slate-400">Scrum Alliance</p>
 </div>
-<div class="card hover:scale-105 transition-transform cursor-pointer">
+<div class="card certification hover:scale-105 transition-transform cursor-pointer">
 <h3 class="font-semibold text-lg mb-2">Google Data Analytics Professional Certificate</h3>
 <p class="text-slate-400">Google / Coursera</p>
 </div>
-<div class="card hover:scale-105 transition-transform cursor-pointer">
+<div class="card certification hover:scale-105 transition-transform cursor-pointer">
 <h3 class="font-semibold text-lg mb-2">Google Project Management Professional Certificate</h3>
 <p class="text-slate-400">Google / Coursera</p>
 </div>
-<div class="card hover:scale-105 transition-transform cursor-pointer">
+<div class="card certification hover:scale-105 transition-transform cursor-pointer">
 <h3 class="font-semibold text-lg mb-2">Python for Everybody – Specialization</h3>
 <p class="text-slate-400">University of Michigan / Coursera</p>
 </div>
@@ -216,19 +232,6 @@ img.hero-img{width:360px;max-width:100%;border-radius:12px;box-shadow:0 20px 40p
 <script>
 AOS.init();
 
-// Load GitHub repos automatically
-fetch("https://api.github.com/users/RishiAryal24/repos")
-.then(res=>res.json())
-.then(data=>{
-const container=document.getElementById("repoContainer")
-data.slice(0,6).forEach(repo=>{
-const card=document.createElement("div")
-card.className="card"
-card.innerHTML=`<h3 class="text-xl font-semibold">${repo.name}</h3><p class="text-slate-400 mt-2">${repo.description || "GitHub repository"}</p><a href="${repo.html_url}" target="_blank" class="text-blue-400 mt-3 inline-block">View Repository →</a>`
-container.appendChild(card)
-})
-})
-
 // Leaflet Map
 var map = L.map('worldMap').setView([0, 80], 2);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:5,attribution:'&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'}).addTo(map);
@@ -238,6 +241,35 @@ var projects=[
 {coords:[-8.5569,125.5603], title:"UNDP / UNICEF / EMIS / Social Protection MIS", description:"National EMIS and social protection platforms, data integration and dashboards (2011–2015)"}
 ];
 projects.forEach(function(proj){L.marker(proj.coords).addTo(map).bindPopup('<b>'+proj.title+'</b><br>'+proj.description);});
+
+// Animate skill bars
+let skillBars = document.querySelectorAll(".skill-bar");
+let observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      let bar = entry.target;
+      bar.style.width = bar.getAttribute("data-width");
+      bar.style.transition = "width 2s ease-in-out";
+      observer.unobserve(bar);
+    }
+  });
+},{threshold:0.5});
+skillBars.forEach(bar => observer.observe(bar));
+
+// Animate certifications cards
+let certs = document.querySelectorAll(".certification");
+let certObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.style.transform="scale(1.05)";
+      entry.target.style.transition="transform 0.5s ease-out, box-shadow 0.5s ease-out";
+      entry.target.style.boxShadow="0 20px 40px rgba(0,0,0,0.5)";
+      setTimeout(()=>{ entry.target.style.transform="scale(1)"; },500);
+      certObserver.unobserve(entry.target);
+    }
+  });
+},{threshold:0.5});
+certs.forEach(cert => certObserver.observe(cert));
 </script>
 </body>
 </html>
