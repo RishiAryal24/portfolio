@@ -1,118 +1,830 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rishi Aryal Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishi Aryal | Senior Software Project Manager</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary-color: #2c3e50; /* Navy Blue */
+            --secondary-color: #3498db; /* Bright Blue */
+            --accent-color: #e74c3c; /* Red */
+            --bg-light: #f8f9fa;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
 
-  <!-- CSS -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/css/main.css" rel="stylesheet">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 1rem;
+            margin-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #ecf0f1;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: var(--transition);
+            margin: 0.5rem;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* --- SECTIONS COMMON --- */
+        section {
+            padding: 5rem 1rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 0.5rem auto 0;
+        }
+
+        /* --- ABOUT & STATS --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr; /* Image gets less space than text */
+            gap: 3rem;
+            align-items: center;
+        }
+
+        /* ADDED: Styles for the Profile Image */
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%; /* Makes it circular */
+            object-fit: cover;
+            border: 8px solid var(--white);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transition: var(--transition);
+        }
+
+        .about-image img:hover {
+            transform: scale(1.02);
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .stat-card i {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card h3 {
+            font-size: 1.5rem;
+        }
+
+        .stat-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* --- SKILLS --- */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 0.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background-color: var(--bg-light);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid #e0e0e0;
+        }
+
+        /* --- EXPERIENCE TIMELINE --- */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: #e0e0e0;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+        }
+
+        .timeline-item {
+            position: relative;
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            margin-left: 50px;
+            box-shadow: var(--card-shadow);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: auto;
+            left: -38px;
+            background-color: var(--white);
+            border: 4px solid var(--secondary-color);
+            top: 20px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            background: #eaf6ff;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .timeline-content h4 {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content ul {
+            list-style-type: disc;
+            padding-left: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .timeline-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-box {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            background-color: #e8f8f5;
+            border-left: 3px solid #27ae60;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .impact-box strong {
+            color: #27ae60;
+        }
+
+        /* --- EDUCATION & CERTS --- */
+        .edu-cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card .year {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- FOOTER & CONTACT --- */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .availability-badge {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: var(--white);
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr; /* Stack image and text on mobile */
+                text-align: center;
+            }
+
+            .about-image {
+                order: -1; /* Ensure image is on top */
+                margin-bottom: 1rem;
+            }
+
+            .timeline::after {
+                left: 20px;
+            }
+
+            .timeline-item {
+                margin-left: 50px;
+            }
+            
+            .timeline-item::after {
+                left: -38px;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-  <!-- HERO SECTION -->
-  <section id="hero" class="d-flex align-items-center text-center">
-    <div class="container">
-      <h1>Rishi Aryal</h1>
-      <h2>
-        <span class="typed" data-typed-items="Full Stack Developer, IT Advisor, Data Analyst"></span>
-      </h2>
-    </div>
-  </section>
+    <!-- NAVIGATION -->
+    <header>
+        <nav>
+            <div class="logo">Rishi <span>Aryal</span></div>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- ABOUT -->
-  <section id="about" class="container mt-5">
-    <h2>About Me</h2>
-    <p>
-      I am an experienced Full Stack Developer and IT Advisor with over a decade of experience 
-      delivering scalable digital solutions. I specialize in Python development, data analysis, 
-      and system design.
-    </p>
-    <p>
-      I have worked with government and private organizations, building management information systems, 
-      automation tools, and data-driven platforms to improve efficiency and decision-making.
-    </p>
-  </section>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Senior Software Project Manager</h1>
+            <p>Delivering enterprise-scale software systems for Governments, UN Agencies, and World Bank programs.</p>
+            <p style="font-size: 1rem; font-style: italic; margin-top: -1.5rem; margin-bottom: 2rem;">Agile, Jira & Enterprise Systems</p>
+            <a href="#contact" class="btn btn-primary">Hire Me</a>
+            <a href="#experience" class="btn btn-outline">View Portfolio</a>
+        </div>
+    </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="container mt-5">
-    <h2>Skills</h2>
-    <ul>
-      <li>Python Development</li>
-      <li>Full Stack Web Development</li>
-      <li>Data Analysis & Visualization</li>
-      <li>Database Management (SQL/NoSQL)</li>
-      <li>Agile & Scrum Project Management</li>
-      <li>DevOps & Deployment</li>
-    </ul>
-  </section>
+    <!-- ABOUT SECTION WITH IMAGE -->
+    <section id="about">
+        <div class="section-title">
+            <h2>About Me</h2>
+        </div>
+        <div class="about-grid">
+            <!-- PROFILE IMAGE ADDED HERE -->
+            <div class="about-image">
+                <!-- 
+                     INSTRUCTION: 
+                     To use your own photo, save your image file (e.g., rishi.jpg) in the same folder 
+                     as this HTML file, and replace the 'src' link below with "rishi.jpg".
+                -->
+                <img src="https://ui-avatars.com/api/?name=Rishi+Aryal&background=0D8ABC&color=fff&size=512" alt="Rishi Aryal">
+            </div>
 
-  <!-- SERVICES -->
-  <section id="services" class="container mt-5">
-    <h2>Services</h2>
+            <div class="about-text">
+                <p>I am a Senior Software Project Manager with over 15 years of progressive experience delivering enterprise-scale software systems. My expertise lies in Agile and Scrum delivery, Jira-based project management, and leading cross-functional teams across distributed time zones in the US, Europe, and Asia.</p>
+                <p>I have a strong technical foundation in SDLC, Health Informatics, MIS, and Social Protection systems. I am recognized for building sustainable systems, strengthening institutional ownership, and enabling long-term digital transformation for clients like UNDP, UNICEF, and The World Bank.</p>
+                
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <i class="fas fa-calendar-check"></i>
+                        <h3>15+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-globe-asia"></i>
+                        <h3>10M+</h3>
+                        <p>USD Portfolio</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-project-diagram"></i>
+                        <h3>20+</h3>
+                        <p>Major Projects</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="row">
-      <div class="col-md-4">
-        <h4>Web Application Development</h4>
-        <p>Building scalable and responsive web applications using modern technologies.</p>
-      </div>
+    <!-- SKILLS SECTION -->
+    <section id="skills" style="background-color: #fff;">
+        <div class="section-title">
+            <h2>Core Competencies</h2>
+        </div>
+        <div class="skills-container">
+            <!-- Project Management -->
+            <div class="skill-category">
+                <h3><i class="fas fa-tasks"></i> Project Management</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Agile & Scrum (CSM)</span>
+                    <span class="skill-tag">Jira & Backlog Mgmt</span>
+                    <span class="skill-tag">SDLC & Release Mgmt</span>
+                    <span class="skill-tag">Risk Management</span>
+                    <span class="skill-tag">Vendor Management</span>
+                    <span class="skill-tag">Stakeholder Coordination</span>
+                    <span class="skill-tag">KPIs & Dashboards</span>
+                </div>
+            </div>
 
-      <div class="col-md-4">
-        <h4>Data Analysis & Automation</h4>
-        <p>Transforming data into insights and automating workflows using Python.</p>
-      </div>
+            <!-- Technical -->
+            <div class="skill-category">
+                <h3><i class="fas fa-laptop-code"></i> Technical & Tools</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">MIS / eCMS / EMIS</span>
+                    <span class="skill-tag">DevOps Collaboration</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">SQL Server</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">Windows Server</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">Django</span>
+                </div>
+            </div>
 
-      <div class="col-md-4">
-        <h4>IT Consulting</h4>
-        <p>Providing strategic IT solutions and system design for organizations.</p>
-      </div>
-    </div>
-  </section>
+            <!-- Domain -->
+            <div class="skill-category">
+                <h3><i class="fas fa-building"></i> Domain Expertise</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Health Informatics</span>
+                    <span class="skill-tag">Social Protection</span>
+                    <span class="skill-tag">Legal Case Management</span>
+                    <span class="skill-tag">Education Systems</span>
+                    <span class="skill-tag">Disaster Risk Mgmt</span>
+                    <span class="skill-tag">Digital Transformation</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- PORTFOLIO -->
-  <section id="portfolio" class="container mt-5">
-    <h2>Projects</h2>
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience">
+        <div class="section-title">
+            <h2>Professional Experience</h2>
+        </div>
+        <div class="timeline">
+            
+            <!-- Role 1 -->
+            <div class="timeline-item">
+                <span class="timeline-date">06/2019 – Present</span>
+                <div class="timeline-content">
+                    <h3>Senior Software Project Manager (Freelance)</h3>
+                    <h4>US-based Health Informatics Organization | Kathmandu, Nepal</h4>
+                    <ul>
+                        <li>Lead end-to-end delivery of enterprise healthcare and management information systems.</li>
+                        <li>Manage Jira epics, user stories, and sprint backlogs; facilitate Agile ceremonies.</li>
+                        <li>Coordinate Engineering, QA, UI/UX, and DevOps across multiple time zones.</li>
+                    </ul>
+                    <div class="impact-box">
+                        <strong>Impact:</strong> Portfolio of digital system implementations valued at ~USD 10 Million. Delivered production-ready healthcare MIS platforms supporting large-scale digital operations.
+                    </div>
+                </div>
+            </div>
 
-    <div>
-      <h4>Commuter Application System</h4>
-      <p>Developed a smart commuter app using Agile methodology with real-time data integration.</p>
-    </div>
+            <!-- Role 2 -->
+            <div class="timeline-item">
+                <span class="timeline-date">05/2015 – 08/2018</span>
+                <div class="timeline-content">
+                    <h3>ICT Specialist</h3>
+                    <h4>Provedoria dos Direitos Humanos e Justiça (PDHJ) | Timor-Leste</h4>
+                    <ul>
+                        <li>Managed nationwide upgrade and rollout of an electronic Case Management System (eCMS).</li>
+                        <li>Oversaw vendor management, including source code updates and maintenance agreements.</li>
+                        <li>Led change management activities and user training programs.</li>
+                    </ul>
+                    <div class="impact-box">
+                        <strong>Impact:</strong> Effectively managed Programme with value: USD 1.46 Million. Achieved nationwide eCMS adoption.
+                    </div>
+                </div>
+            </div>
 
-    <div>
-      <h4>Document Verification System</h4>
-      <p>Implemented hash-based document verification to prevent fraud.</p>
-    </div>
+            <!-- Role 3 -->
+            <div class="timeline-item">
+                <span class="timeline-date">08/2014 – 04/2015</span>
+                <div class="timeline-content">
+                    <h3>ICT Audit Specialist</h3>
+                    <h4>United Nations Development Programme (UNDP)</h4>
+                    <ul>
+                        <li>Conducted comprehensive technical and governance audit of a PostgreSQL-based eCMS.</li>
+                        <li>Assessed system architecture, performance, scalability, and security.</li>
+                        <li>Supported containerized testing and deployment activities using Kubernetes.</li>
+                    </ul>
+                </div>
+            </div>
 
-    <div>
-      <h4>Data Entry Web Application</h4>
-      <p>Built a full-stack system with file upload and database integration.</p>
-    </div>
-  </section>
+            <!-- Role 4 -->
+            <div class="timeline-item">
+                <span class="timeline-date">10/2013 – 07/2014</span>
+                <div class="timeline-content">
+                    <h3>EMIS Consultant</h3>
+                    <h4>UNICEF</h4>
+                    <ul>
+                        <li>Led national assessment and enhancement of the Education Management Information System (EMIS).</li>
+                        <li>Integrated multiple education databases into a single centralized national platform.</li>
+                        <li>Coordinated infrastructure upgrades, virtualized environments, and data migration.</li>
+                    </ul>
+                </div>
+            </div>
 
-  <!-- CONTACT -->
-  <section id="contact" class="container mt-5 mb-5">
-    <h2>Contact</h2>
-    <p>Email: rishiaryal@example.com</p>
-    <p>Location: Kathmandu, Nepal</p>
-    <p>Available for freelance and consulting work</p>
-  </section>
+            <!-- Role 5 -->
+            <div class="timeline-item">
+                <span class="timeline-date">09/2012 – 08/2013</span>
+                <div class="timeline-content">
+                    <h3>IT / Case Management System Consultant</h3>
+                    <h4>United Nations Development Programme (UNDP)</h4>
+                    <ul>
+                        <li>Led design and delivery of a Django-based electronic Case Management System.</li>
+                        <li>Translated paper-based legal workflows into secure digital processes.</li>
+                        <li>Mentored internal IT staff to ensure knowledge transfer.</li>
+                    </ul>
+                </div>
+            </div>
 
-  <!-- JS -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
+            <!-- Role 6 -->
+            <div class="timeline-item">
+                <span class="timeline-date">04/2012 – 05/2013</span>
+                <div class="timeline-content">
+                    <h3>Management Information System Consultant</h3>
+                    <h4>The World Bank</h4>
+                    <ul>
+                        <li>Designed and delivered a centralized MIS supporting national social protection programs.</li>
+                        <li>Integrated multiple cash transfer and beneficiary management programs.</li>
+                        <li>Supported vendor coordination, testing, and quality assurance.</li>
+                    </ul>
+                </div>
+            </div>
 
-  <script>
-    var typed = new Typed('.typed', {
-      strings: ["Full Stack Developer", "IT Advisor", "Data Analyst"],
-      typeSpeed: 50,
-      backSpeed: 30,
-      loop: true
-    });
-  </script>
+            <!-- Role 7 -->
+            <div class="timeline-item">
+                <span class="timeline-date">11/2010 – 06/2011</span>
+                <div class="timeline-content">
+                    <h3>ICT Consultant</h3>
+                    <h4>IOM – UN Migration</h4>
+                    <ul>
+                        <li>Analyzed disaster risk management and IDP reintegration workflows.</li>
+                        <li>Designed data management, verification, and complaint-handling systems.</li>
+                    </ul>
+                </div>
+            </div>
 
+            <!-- Role 8 -->
+            <div class="timeline-item">
+                <span class="timeline-date">01/2007 – 12/2007</span>
+                <div class="timeline-content">
+                    <h3>IT / Data Management Specialist</h3>
+                    <h4>Government of Nepal – Ministry of Health</h4>
+                    <ul>
+                        <li>Managed HMIS system administration and disaster recovery planning.</li>
+                        <li>Implemented Windows Server, Active Directory, SQL Server, and virtualization.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EDUCATION & CERTS -->
+    <section id="education" style="background-color: #fff;">
+        <div class="section-title">
+            <h2>Education & Certifications</h2>
+        </div>
+        <div class="edu-cert-grid">
+            <!-- Education -->
+            <div>
+                <h3 style="margin-bottom: 1.5rem; color: var(--primary-color);">Education</h3>
+                <div class="card" style="margin-bottom: 1rem;">
+                    <h3>Master of Information Technology</h3>
+                    <span class="year">Indira Gandhi National Open University (IGNOU) – 2004</span>
+                </div>
+                <div class="card" style="margin-bottom: 1rem;">
+                    <h3>Master of Economics</h3>
+                    <span class="year">University of Delhi – 2008</span>
+                </div>
+                <div class="card">
+                    <h3>Bachelor of Information Technology</h3>
+                    <span class="year">Indira Gandhi National Open University (IGNOU) – 2002</span>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div>
+                <h3 style="margin-bottom: 1.5rem; color: var(--primary-color);">Certifications</h3>
+                <div class="card" style="margin-bottom: 1rem;">
+                    <h3>Certified Scrum Master (CSM)</h3>
+                    <span class="year">Agile & Scrum Alliance</span>
+                </div>
+                <div class="card" style="margin-bottom: 1rem;">
+                    <h3>Google Project Management Professional Certificate</h3>
+                </div>
+                <div class="card" style="margin-bottom: 1rem;">
+                    <h3>Google Data Analytics Professional Certificate</h3>
+                </div>
+                <div class="card">
+                    <h3>Python for Everybody – Specialization</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACT -->
+    <footer id="contact">
+        <div class="availability-badge">
+            <i class="fas fa-check-circle"></i> Available within one week’s notice
+        </div>
+        
+        <div class="section-title" style="margin-bottom: 2rem;">
+            <h2 style="color: var(--white);">Get In Touch</h2>
+        </div>
+
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <p>aryalrishi29@gmail.com</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <p>+977 9702092431</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Kathmandu, Nepal</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 3rem; font-size: 0.9rem; opacity: 0.7;">
+            <p>&copy; 2023 Rishi Aryal. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR MOBILE MENU -->
+    <script>
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+    </script>
 </body>
-
 </html>
