@@ -1,43 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Building REST APIs with Django & DRF | Rishi Aryal</title>
-<meta name="description" content="Create scalable REST APIs using Django Rest Framework with authentication, serializers, and optimized queries.">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<style>
-body{font-family:'Poppins',sans-serif;background:#0f172a;color:#fff;padding:20px;line-height:1.7;}
-h1,h2,h3{color:#38bdf8;}
-a{color:#38bdf8;text-decoration:none;}
-a.btn{display:inline-block;margin-top:20px;padding:10px 20px;background:#38bdf8;color:#000;border-radius:6px;font-weight:600;}
-.container{max-width:900px;margin:auto;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building REST APIs with Django & DRF | Rishi Aryal</title>
+  <meta name="description" content="Create scalable REST APIs using Django Rest Framework with authentication, serializers, and optimized queries.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    .post-hero { padding:80px 0 40px; background:linear-gradient(180deg,rgba(99,102,241,0.07) 0%,transparent 100%); }
+    .post-meta { display:flex; flex-wrap:wrap; gap:.75rem; align-items:center; margin-top:1.25rem; }
+    .post-body { max-width:780px; margin:0 auto; }
+    .post-body h2 { color:var(--text-primary); margin:2.5rem 0 1rem; font-size:1.4rem; }
+    .post-body p { margin-bottom:1.25rem; line-height:1.9; }
+    .post-body pre {
+      background:rgba(255,255,255,.04); border:1px solid var(--border);
+      border-radius:var(--radius-sm); padding:1.25rem; overflow-x:auto;
+      font-size:.85rem; color:var(--cyan); margin-bottom:1.5rem;
+      font-family:'Courier New',monospace; line-height:1.7;
+    }
+    .post-body code { color:var(--cyan); background:rgba(6,182,212,.1); padding:2px 6px; border-radius:4px; font-size:.85em; }
+    .post-nav { display:flex; gap:1rem; flex-wrap:wrap; margin-top:3rem; }
+    .tip-box {
+      background:rgba(139,92,246,.07); border:1px solid rgba(139,92,246,.25);
+      border-left:3px solid var(--violet); border-radius:var(--radius-sm);
+      padding:1rem 1.25rem; margin-bottom:1.5rem;
+    }
+    .tip-box p { margin-bottom:0; color:var(--text-secondary); font-size:.9rem; }
+  </style>
 </head>
 <body>
-<div class="container">
-<h1>Building REST APIs with Django & DRF</h1>
-<p><strong>Author:</strong> Rishi Aryal | <strong>Date:</strong> 2025-12-30 | <strong>Category:</strong> Full-Stack</p>
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-logo">Rishi Aryal</a>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../projects.html">Projects</a></li>
+      <li><a href="../experience.html">Experience</a></li>
+      <li><a href="../skills.html">Skills</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-<h2>Introduction</h2>
-<p>Django Rest Framework (DRF) simplifies building REST APIs. This tutorial covers authentication, serializers, and API views for scalable applications.</p>
+<div class="page-wrapper">
+  <div class="post-hero">
+    <div class="container" data-aos="fade-up">
+      <span class="badge badge-violet">Full-Stack</span>
+      <h1 style="margin-top:.75rem;">Building REST APIs with <span class="gradient-text">Django &amp; DRF</span></h1>
+      <div class="post-meta">
+        <span style="font-size:.82rem;color:var(--text-muted);">✍️ Rishi Aryal</span>
+        <span style="font-size:.82rem;color:var(--text-muted);">📅 December 30, 2025</span>
+        <span style="font-size:.82rem;color:var(--text-muted);">⏱ 7 min read</span>
+      </div>
+    </div>
+  </div>
 
-<h2>Step 1: Install DRF</h2>
-<p>Install using `pip install djangorestframework` and add `'rest_framework'` to `INSTALLED_APPS`.</p>
+  <section>
+    <div class="container">
+      <div class="post-body" data-aos="fade-up">
 
-<h2>Step 2: Create Models & Serializers</h2>
-<p>Define Django models and create serializers to convert them to JSON.</p>
+        <h2>Introduction</h2>
+        <p>Django Rest Framework (DRF) is the gold standard for building REST APIs in Python. In the Orbital multi-tenant platform project, we used DRF to power all data exchange between the React frontend and the Django backend. This guide covers the key building blocks — serializers, viewsets, authentication, and query optimization.</p>
 
-<h2>Step 3: API Views & Routing</h2>
-<p>Create APIView classes or use ViewSets and configure URLs using DRF routers.</p>
+        <h2>Step 1 — Install &amp; Configure DRF</h2>
+        <pre>pip install djangorestframework djangorestframework-simplejwt
 
-<h2>Step 4: Authentication</h2>
-<p>Enable token or JWT authentication to secure your APIs.</p>
+# settings.py
+INSTALLED_APPS = [
+    ...
+    'rest_framework',
+]
 
-<h2>Conclusion</h2>
-<p>With DRF, building scalable and maintainable APIs is streamlined, allowing your applications to communicate efficiently.</p>
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 25,
+}</pre>
 
-<a class="btn" href="../index.html">Back to Portfolio</a>
+        <h2>Step 2 — Define Your Serializer</h2>
+        <p>Serializers translate between complex Django model instances and JSON. Use <code>ModelSerializer</code> to auto-generate fields from your model:</p>
+        <pre>from rest_framework import serializers
+from .models import Beneficiary
+
+class BeneficiarySerializer(serializers.ModelSerializer):
+    full_name = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Beneficiary
+        fields = ['id', 'full_name', 'district', 'enrollment_date', 'is_active']
+        read_only_fields = ['id', 'enrollment_date']
+
+    def get_full_name(self, obj):
+        return f"{obj.first_name} {obj.last_name}"</pre>
+
+        <div class="tip-box">
+          <p>💡 <strong>Tip:</strong> Use <code>select_related</code> and <code>prefetch_related</code> in your queryset to prevent N+1 queries — a common performance killer in DRF APIs with nested serializers.</p>
+        </div>
+
+        <h2>Step 3 — Create a ViewSet</h2>
+        <p>ViewSets combine list, create, retrieve, update and delete into a single class. Register it with a router to auto-generate URLs:</p>
+        <pre>from rest_framework import viewsets, filters
+from rest_framework.decorators import action
+from rest_framework.response import Response
+from .models import Beneficiary
+from .serializers import BeneficiarySerializer
+
+class BeneficiaryViewSet(viewsets.ModelViewSet):
+    serializer_class = BeneficiarySerializer
+    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
+    search_fields = ['first_name', 'last_name', 'district']
+    ordering_fields = ['enrollment_date', 'district']
+
+    def get_queryset(self):
+        return Beneficiary.objects.select_related('program') \
+            .filter(tenant=self.request.tenant, is_active=True)
+
+    @action(detail=False, methods=['get'])
+    def summary(self, request):
+        qs = self.get_queryset()
+        return Response({'total': qs.count(), 'districts': qs.values('district').distinct().count()})</pre>
+
+        <h2>Step 4 — Register URLs</h2>
+        <pre>from rest_framework.routers import DefaultRouter
+from .views import BeneficiaryViewSet
+
+router = DefaultRouter()
+router.register(r'beneficiaries', BeneficiaryViewSet, basename='beneficiary')
+
+urlpatterns = router.urls
+# Auto-generates: GET/POST /beneficiaries/, GET/PUT/DELETE /beneficiaries/{id}/</pre>
+
+        <h2>Step 5 — Secure with JWT</h2>
+        <pre># urls.py (project level)
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+
+urlpatterns += [
+    path('api/token/', TokenObtainPairView.as_view()),
+    path('api/token/refresh/', TokenRefreshView.as_view()),
+]</pre>
+
+        <h2>Conclusion</h2>
+        <p>DRF's combination of serializers, viewsets, and routers lets you build a fully featured, secure REST API with minimal boilerplate. Pair it with JWT authentication and careful queryset optimization, and you have an API ready for production enterprise workloads.</p>
+
+        <div class="post-nav">
+          <a href="../blog.html" class="btn btn-outline">← Back to Blog</a>
+          <a href="python-k8s-deployment.html" class="btn btn-ghost">Next: Kubernetes Deployment →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 <strong>Rishi Aryal</strong>. &nbsp;
+      <a href="https://github.com/RishiAryal24" target="_blank">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/rishi-aryal-nepal" target="_blank">LinkedIn</a>
+    </p>
+  </div>
+</footer>
+<button id="scroll-top" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+</button>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>

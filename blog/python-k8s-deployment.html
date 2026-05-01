@@ -1,43 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deploying Python Apps on Kubernetes | Rishi Aryal</title>
-<meta name="description" content="Learn how to containerize Python apps and deploy them on Kubernetes clusters with best practices.">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<style>
-body{font-family:'Poppins',sans-serif;background:#0f172a;color:#fff;padding:20px;line-height:1.7;}
-h1,h2,h3{color:#38bdf8;}
-a{color:#38bdf8;text-decoration:none;}
-a.btn{display:inline-block;margin-top:20px;padding:10px 20px;background:#38bdf8;color:#000;border-radius:6px;font-weight:600;}
-.container{max-width:900px;margin:auto;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deploying Python Apps on Kubernetes | Rishi Aryal</title>
+  <meta name="description" content="Learn how to containerize Python apps and deploy them on Kubernetes clusters with best practices.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    .post-hero { padding:80px 0 40px; background:linear-gradient(180deg,rgba(99,102,241,0.07) 0%,transparent 100%); }
+    .post-meta { display:flex; flex-wrap:wrap; gap:.75rem; align-items:center; margin-top:1.25rem; }
+    .post-body { max-width:780px; margin:0 auto; }
+    .post-body h2 { color:var(--text-primary); margin:2.5rem 0 1rem; font-size:1.4rem; }
+    .post-body p { margin-bottom:1.25rem; line-height:1.9; }
+    .post-body pre {
+      background:rgba(255,255,255,.04); border:1px solid var(--border);
+      border-radius:var(--radius-sm); padding:1.25rem; overflow-x:auto;
+      font-size:.85rem; color:var(--cyan); margin-bottom:1.5rem;
+      font-family:'Courier New',monospace; line-height:1.7;
+    }
+    .post-body code { color:var(--cyan); background:rgba(6,182,212,.1); padding:2px 6px; border-radius:4px; font-size:.85em; }
+    .post-nav { display:flex; gap:1rem; flex-wrap:wrap; margin-top:3rem; }
+    .tip-box {
+      background:rgba(99,102,241,.07); border:1px solid rgba(99,102,241,.25);
+      border-left:3px solid var(--indigo); border-radius:var(--radius-sm);
+      padding:1rem 1.25rem; margin-bottom:1.5rem;
+    }
+    .tip-box p { margin-bottom:0; color:var(--text-secondary); font-size:.9rem; }
+  </style>
 </head>
 <body>
-<div class="container">
-<h1>Deploying Python Apps on Kubernetes</h1>
-<p><strong>Author:</strong> Rishi Aryal | <strong>Date:</strong> 2025-12-10 | <strong>Category:</strong> DevOps</p>
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-logo">Rishi Aryal</a>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../projects.html">Projects</a></li>
+      <li><a href="../experience.html">Experience</a></li>
+      <li><a href="../skills.html">Skills</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-<h2>Introduction</h2>
-<p>Deploying Python applications on Kubernetes ensures scalability, high availability, and automated management of containers.</p>
+<div class="page-wrapper">
+  <div class="post-hero">
+    <div class="container" data-aos="fade-up">
+      <span class="badge badge-cyan">DevOps</span>
+      <h1 style="margin-top:.75rem;">Deploying Python Apps on <span class="gradient-text">Kubernetes</span></h1>
+      <div class="post-meta">
+        <span style="font-size:.82rem;color:var(--text-muted);">✍️ Rishi Aryal</span>
+        <span style="font-size:.82rem;color:var(--text-muted);">📅 December 10, 2025</span>
+        <span style="font-size:.82rem;color:var(--text-muted);">⏱ 8 min read</span>
+      </div>
+    </div>
+  </div>
 
-<h2>Step 1: Containerize Your App</h2>
-<p>Create a Dockerfile for your Python app and build an image.</p>
+  <section>
+    <div class="container">
+      <div class="post-body" data-aos="fade-up">
 
-<h2>Step 2: Push to Registry</h2>
-<p>Push the Docker image to Docker Hub or a private container registry.</p>
+        <h2>Introduction</h2>
+        <p>Kubernetes (K8s) is the industry-standard container orchestration platform. In the Orbital multi-tenant platform, we used Kubernetes on AWS EKS to achieve zero-downtime rolling deployments, automatic scaling, and self-healing infrastructure. This guide walks through containerising a Django app and deploying it on K8s.</p>
 
-<h2>Step 3: Kubernetes Deployment</h2>
-<p>Create deployment and service YAML files and apply them using `kubectl apply -f deployment.yaml`.</p>
+        <h2>Step 1 — Containerise Your Application</h2>
+        <p>First, create a production-ready <code>Dockerfile</code>. Use multi-stage builds and a non-root user for security:</p>
+        <pre>FROM python:3.11-slim AS builder
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-<h2>Step 4: Scale & Monitor</h2>
-<p>Use `kubectl scale` and monitoring tools like Prometheus/Grafana to ensure reliability.</p>
+FROM python:3.11-slim
+WORKDIR /app
+COPY --from=builder /usr/local/lib/python3.11/site-packages /usr/local/lib/python3.11/site-packages
+COPY . .
 
-<h2>Conclusion</h2>
-<p>Kubernetes automates deployment, scaling, and management, making Python applications production-ready and robust.</p>
+# Run as non-root
+RUN adduser --disabled-password appuser
+USER appuser
 
-<a class="btn" href="../index.html">Back to Portfolio</a>
+EXPOSE 8000
+CMD ["gunicorn", "myproject.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "3"]</pre>
+
+        <h2>Step 2 — Write a Kubernetes Deployment</h2>
+        <p>A <code>Deployment</code> manages your pods, handles rolling updates, and restarts failed containers automatically:</p>
+        <pre>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django-app
+  namespace: production
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: django-app
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: django-app
+    spec:
+      containers:
+        - name: django
+          image: myorg/django-app:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: django-secrets
+                  key: database-url
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          livenessProbe:
+            httpGet:
+              path: /health/
+              port: 8000
+            initialDelaySeconds: 15
+            periodSeconds: 20</pre>
+
+        <div class="tip-box">
+          <p>💡 <strong>Tip:</strong> Always set <code>resources.requests</code> and <code>resources.limits</code>. Without them, a runaway pod can starve other services in the same cluster — a critical issue in multi-tenant environments.</p>
+        </div>
+
+        <h2>Step 3 — Expose with a Service &amp; Ingress</h2>
+        <pre>apiVersion: v1
+kind: Service
+metadata:
+  name: django-service
+spec:
+  selector:
+    app: django-app
+  ports:
+    - port: 80
+      targetPort: 8000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: django-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  rules:
+    - host: api.myapp.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: django-service
+                port:
+                  number: 80</pre>
+
+        <h2>Step 4 — Store Secrets Safely</h2>
+        <pre># Create secret from .env file
+kubectl create secret generic django-secrets \
+  --from-env-file=.env.production \
+  --namespace=production
+
+# Verify
+kubectl get secrets -n production</pre>
+
+        <h2>Step 5 — Deploy &amp; Roll Out</h2>
+        <pre># Apply manifests
+kubectl apply -f k8s/
+
+# Monitor rollout
+kubectl rollout status deployment/django-app -n production
+
+# Roll back if needed
+kubectl rollout undo deployment/django-app -n production</pre>
+
+        <h2>Conclusion</h2>
+        <p>With Kubernetes, your Python app gains production-grade resilience: automatic restarts on failure, rolling zero-downtime deployments, and horizontal scaling under load. Combined with the CI/CD pipeline from our GitHub Actions article, you have a complete modern DevOps workflow from code commit to live cluster.</p>
+
+        <div class="post-nav">
+          <a href="../blog.html" class="btn btn-outline">← Back to Blog</a>
+          <a href="ci-cd-github-actions.html" class="btn btn-ghost">Also Read: CI/CD with GitHub Actions →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 <strong>Rishi Aryal</strong>. &nbsp;
+      <a href="https://github.com/RishiAryal24" target="_blank">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/rishi-aryal-nepal" target="_blank">LinkedIn</a>
+    </p>
+  </div>
+</footer>
+<button id="scroll-top" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+</button>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>

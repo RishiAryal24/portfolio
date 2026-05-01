@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Rishi Aryal</title>
+  <meta name="description" content="Flagship projects by Rishi Aryal — enterprise MIS, eCMS, EMIS, and DevOps platforms delivered for governments and UN agencies.">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    .proj-card { cursor: pointer; }
+    .proj-card .proj-header { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; margin-bottom:1rem; }
+    .proj-card .proj-icon { font-size:2rem; }
+    .proj-card .proj-value {
+      font-size:0.75rem; font-weight:700; color:var(--cyan);
+      background:rgba(6,182,212,0.1); border:1px solid rgba(6,182,212,0.25);
+      border-radius:999px; padding:4px 12px; white-space:nowrap;
+    }
+    .proj-card h3 { font-size:1.05rem; margin-bottom:.5rem; }
+    .proj-card .proj-client { font-size:0.8rem; color:var(--indigo); font-weight:600; margin-bottom:.75rem; }
+    .proj-card p { font-size:0.875rem; }
+    .proj-card .proj-tags { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:1rem; }
+    .proj-card .proj-cta {
+      display:inline-flex; align-items:center; gap:6px;
+      margin-top:1.25rem; font-size:0.82rem; font-weight:600;
+      color:var(--indigo); transition:var(--transition);
+    }
+    .proj-card:hover .proj-cta { color:var(--cyan); gap:10px; }
+
+    /* Modal inner layout */
+    .modal-box { position:relative; }
+    .modal-box .modal-close { position:absolute; top:1rem; right:1rem; }
+    .modal-meta { display:flex; flex-wrap:wrap; gap:.75rem; margin:1rem 0; }
+    .modal-meta span { font-size:0.8rem; }
+    #modal-tags { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1.25rem; }
+  </style>
+</head>
+<body>
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">Rishi Aryal</a>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="assets/cv.pdf" download class="cv-btn" id="nav-cv-btn">⬇ Download CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+  <section style="padding:80px 0 40px; background:linear-gradient(180deg,rgba(99,102,241,0.06) 0%,transparent 100%);">
+    <div class="container text-center" data-aos="fade-up">
+      <h1>Flagship <span class="gradient-text">Projects</span></h1>
+      <p style="max-width:540px;margin:1rem auto 0;">Enterprise platforms delivered for governments, UN agencies and World Bank programs.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="filter-bar" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all" data-target=".proj-grid">All</button>
+        <button class="filter-btn" data-filter="government" data-target=".proj-grid">Government</button>
+        <button class="filter-btn" data-filter="enterprise" data-target=".proj-grid">Enterprise</button>
+        <button class="filter-btn" data-filter="devops" data-target=".proj-grid">DevOps</button>
+        <button class="filter-btn" data-filter="social" data-target=".proj-grid">Social Protection</button>
+      </div>
+
+      <div class="grid grid-2 proj-grid" style="gap:1.5rem;">
+        <div class="card proj-card" data-category="government" data-modal="ecms" data-aos="fade-up" data-aos-delay="0">
+          <div class="proj-header">
+            <span class="proj-icon">⚖️</span>
+            <span class="proj-value">USD 1.46M</span>
+          </div>
+          <h3>Electronic Case Management System (eCMS)</h3>
+          <p class="proj-client">PDHJ — Timor-Leste</p>
+          <p>Nationwide legal case management platform deployed for human rights complaint handling and institutional reporting.</p>
+          <div class="proj-tags">
+            <span class="badge">Government</span>
+            <span class="badge badge-cyan">Agile</span>
+            <span class="badge badge-violet">MIS</span>
+          </div>
+          <span class="proj-cta">View Details →</span>
+        </div>
+
+        <div class="card proj-card" data-category="government" data-modal="emis" data-aos="fade-up" data-aos-delay="100">
+          <div class="proj-header">
+            <span class="proj-icon">🎓</span>
+            <span class="proj-value">UNICEF Funded</span>
+          </div>
+          <h3>Education Management Information System (EMIS)</h3>
+          <p class="proj-client">Ministry of Education — Timor-Leste</p>
+          <p>Centralised national EMIS integrating multiple datasets and enabling data-driven educational planning at scale.</p>
+          <div class="proj-tags">
+            <span class="badge">Government</span>
+            <span class="badge badge-cyan">EMIS</span>
+            <span class="badge badge-violet">Data</span>
+          </div>
+          <span class="proj-cta">View Details →</span>
+        </div>
+
+        <div class="card proj-card" data-category="social" data-modal="mis" data-aos="fade-up" data-aos-delay="0">
+          <div class="proj-header">
+            <span class="proj-icon">🛡️</span>
+            <span class="proj-value">World Bank</span>
+          </div>
+          <h3>Social Protection MIS</h3>
+          <p class="proj-client">World Bank Program — Nepal &amp; Timor-Leste</p>
+          <p>Integrated national MIS supporting cash transfer programs and beneficiary tracking for social protection schemes.</p>
+          <div class="proj-tags">
+            <span class="badge">Social Protection</span>
+            <span class="badge badge-cyan">MIS</span>
+            <span class="badge badge-violet">World Bank</span>
+          </div>
+          <span class="proj-cta">View Details →</span>
+        </div>
+
+        <div class="card proj-card" data-category="enterprise devops" data-modal="orbital" data-aos="fade-up" data-aos-delay="100">
+          <div class="proj-header">
+            <span class="proj-icon">🚀</span>
+            <span class="proj-value">Enterprise</span>
+          </div>
+          <h3>Multi-Tenant Orbital Platform</h3>
+          <p class="proj-client">Internal / US-Based Health Informatics Org</p>
+          <p>Cloud-native, multi-tenant Django platform with CI/CD pipelines, Kubernetes orchestration and full DevOps integration.</p>
+          <div class="proj-tags">
+            <span class="badge">Enterprise</span>
+            <span class="badge badge-cyan">DevOps</span>
+            <span class="badge badge-violet">Kubernetes</span>
+          </div>
+          <span class="proj-cta">View Details →</span>
+        </div>
+
+        <div class="card proj-card" data-category="government" data-modal="hmis" data-aos="fade-up" data-aos-delay="0">
+          <div class="proj-header">
+            <span class="proj-icon">🏥</span>
+            <span class="proj-value">GoN Funded</span>
+          </div>
+          <h3>Health Management Information System (HMIS)</h3>
+          <p class="proj-client">Government of Nepal</p>
+          <p>National HMIS administration, disaster recovery planning, and development of internal web applications for health data reporting.</p>
+          <div class="proj-tags">
+            <span class="badge">Government</span>
+            <span class="badge badge-cyan">HMIS</span>
+            <span class="badge badge-violet">Disaster Recovery</span>
+          </div>
+          <span class="proj-cta">View Details →</span>
+        </div>
+
+        <div class="card proj-card" data-category="devops" data-modal="cicd" data-aos="fade-up" data-aos-delay="100">
+          <div class="proj-header">
+            <span class="proj-icon">⚙️</span>
+            <span class="proj-value">Open Source</span>
+          </div>
+          <h3>CI/CD Automation Framework</h3>
+          <p class="proj-client">Freelance / Enterprise Projects</p>
+          <p>GitHub Actions pipelines for automated testing, Docker image builds and Kubernetes deployment for Python/Django applications.</p>
+          <div class="proj-tags">
+            <span class="badge">DevOps</span>
+            <span class="badge badge-cyan">GitHub Actions</span>
+            <span class="badge badge-violet">Docker</span>
+          </div>
+          <span class="proj-cta">View Details →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- PROJECT MODAL -->
+<div id="project-modal" class="modal-overlay">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Close">✕</button>
+    <h2 id="modal-title" style="margin-bottom:.5rem;"></h2>
+    <div class="modal-meta">
+      <span class="badge">Client: <span id="modal-client"></span></span>
+      <span class="badge badge-cyan">Value: <span id="modal-value"></span></span>
+    </div>
+    <p id="modal-desc" style="margin-top:1rem;line-height:1.8;"></p>
+    <div id="modal-tags"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 <strong>Rishi Aryal</strong>. &nbsp;
+      <a href="https://github.com/RishiAryal24" target="_blank">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/rishi-aryal-nepal" target="_blank">LinkedIn</a>
+    </p>
+  </div>
+</footer>
+<button id="scroll-top" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+</button>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/main.js"></script>
+<script>
+window.projectData = {
+  ecms: { title:"Electronic Case Management System (eCMS)", client:"PDHJ, Timor-Leste", value:"USD 1.46M", tags:["Government","Agile","Legal MIS","Vendor Management","Staff Training"], desc:"Nationwide legal case management platform deployed across all districts of Timor-Leste for human rights complaint handling. Led full SDLC from requirements gathering through deployment, trained 200+ civil servants, managed vendor contracts and ensured institutional ownership post-project." },
+  emis: { title:"Education Management Information System (EMIS)", client:"Ministry of Education, Timor-Leste", value:"UNICEF Funded", tags:["Government","EMIS","Data Integration","Dashboards","UNICEF"], desc:"Centralised national EMIS integrating school enrolment, teacher, infrastructure, and exam datasets. Built reporting dashboards enabling data-driven planning by ministry officials. Delivered in partnership with UNICEF, coordinating cross-ministry stakeholders." },
+  mis: { title:"Social Protection Management Information System", client:"World Bank Program", value:"World Bank Funded", tags:["Social Protection","MIS","Cash Transfers","Beneficiary Tracking","World Bank"], desc:"Integrated national MIS supporting cash transfer programs and beneficiary tracking across multiple social protection schemes. Delivered data pipelines, beneficiary registries, and management dashboards, with full donor reporting capabilities." },
+  orbital: { title:"Multi-Tenant Orbital Platform", client:"US-Based Health Informatics Organization", value:"Enterprise (Confidential)", tags:["Django","Kubernetes","Docker","GitHub Actions","Multi-tenant","CI/CD"], desc:"Enterprise-ready, cloud-native, multi-tenant SaaS platform for healthcare applications. Led Agile delivery across distributed teams spanning Nepal and the US. Implemented full CI/CD with GitHub Actions, Docker containerisation and Kubernetes orchestration on AWS." },
+  hmis: { title:"Health Management Information System (HMIS)", client:"Government of Nepal", value:"GoN / Donor Funded", tags:["Government","HMIS","Disaster Recovery","Nepal","Health Data"], desc:"National HMIS administration including disaster recovery planning, server management, and development of internal web applications for health data collection and reporting across all 75 districts of Nepal." },
+  cicd: { title:"CI/CD Automation Framework", client:"Freelance / Enterprise", value:"Open Source", tags:["GitHub Actions","Docker","Kubernetes","Python","Django","Automation"], desc:"Designed and implemented reusable CI/CD pipeline templates for Python and Django projects using GitHub Actions. Automated unit testing, code quality checks, Docker image builds, and rolling Kubernetes deployments, reducing release cycle from days to hours." }
+};
+</script>
+</body>
+</html>

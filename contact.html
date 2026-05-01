@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Rishi Aryal</title>
+  <meta name="description" content="Get in touch with Rishi Aryal — Senior Software Project Manager available for consulting and enterprise ICT projects.">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    .contact-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:4rem; align-items:start; }
+    @media(max-width:768px){ .contact-grid{grid-template-columns:1fr;} }
+    .contact-link-card {
+      display:flex; align-items:center; gap:1rem;
+      padding:1.1rem 1.4rem;
+      background:var(--bg-card); border:1px solid var(--border);
+      border-radius:var(--radius-md); color:var(--text-secondary);
+      font-weight:600; font-size:.9rem; margin-bottom:.9rem;
+      transition:var(--transition);
+    }
+    .contact-link-card .cl-icon {
+      width:42px;height:42px;border-radius:var(--radius-sm);
+      background:var(--gradient-soft); border:1px solid rgba(99,102,241,.2);
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.3rem;flex-shrink:0;
+    }
+    .contact-link-card div { flex:1; }
+    .contact-link-card .cl-label { font-size:.72rem;color:var(--text-muted); display:block; margin-bottom:2px; }
+    .contact-link-card:hover { border-color:var(--border-hover);color:var(--text-primary);transform:translateX(6px); }
+    .contact-link-card .cl-arrow { color:var(--indigo); font-size:1.1rem; transition:var(--transition); }
+    .contact-link-card:hover .cl-arrow { color:var(--cyan); transform:translateX(4px); }
+
+    .form-success {
+      display:none; text-align:center; padding:2rem;
+      background:rgba(6,182,212,.08); border:1px solid rgba(6,182,212,.25);
+      border-radius:var(--radius-md); margin-top:1rem;
+    }
+    .form-success h3 { color:var(--cyan); margin-bottom:.5rem; }
+  </style>
+</head>
+<body>
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">Rishi Aryal</a>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="assets/cv.pdf" download class="cv-btn" id="nav-cv-btn">⬇ Download CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+  <section style="padding:80px 0 40px;background:linear-gradient(180deg,rgba(99,102,241,0.06) 0%,transparent 100%);">
+    <div class="container text-center" data-aos="fade-up">
+      <h1>Get In <span class="gradient-text">Touch</span></h1>
+      <p style="max-width:520px;margin:1rem auto 0;">Whether it's a consulting inquiry, a project opportunity, or just a conversation — I'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- LEFT: Contact Info -->
+        <div data-aos="fade-right">
+          <h2 style="margin-bottom:.75rem;">Let's <span class="gradient-text">Connect</span></h2>
+          <p style="margin-bottom:2rem;">I'm available for senior project management consulting, ICT advisory, MIS implementations, and DevOps engagements. Based in Kathmandu, Nepal — working globally.</p>
+
+          <a href="mailto:aryalrishi29@gmail.com" class="contact-link-card">
+            <span class="cl-icon">📧</span>
+            <div>
+              <span class="cl-label">Email</span>
+              aryalrishi29@gmail.com
+            </div>
+            <span class="cl-arrow">→</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/rishi-aryal-nepal" target="_blank" class="contact-link-card">
+            <span class="cl-icon">💼</span>
+            <div>
+              <span class="cl-label">LinkedIn</span>
+              rishi-aryal-nepal
+            </div>
+            <span class="cl-arrow">→</span>
+          </a>
+
+          <a href="https://github.com/RishiAryal24" target="_blank" class="contact-link-card">
+            <span class="cl-icon">🐙</span>
+            <div>
+              <span class="cl-label">GitHub</span>
+              RishiAryal24
+            </div>
+            <span class="cl-arrow">→</span>
+          </a>
+
+          <div class="card" style="margin-top:1.5rem;background:var(--gradient-soft);border-color:rgba(99,102,241,.2);">
+            <p style="font-size:.875rem;"><strong style="color:var(--text-primary);">📍 Based in:</strong> Kathmandu, Nepal</p>
+            <p style="font-size:.875rem;margin-top:.4rem;"><strong style="color:var(--text-primary);">🌐 Works with:</strong> International clients globally</p>
+            <p style="font-size:.875rem;margin-top:.4rem;"><strong style="color:var(--text-primary);">⚡ Response time:</strong> Within 24 hours</p>
+          </div>
+        </div>
+
+        <!-- RIGHT: Contact Form -->
+        <div data-aos="fade-left">
+          <div class="glass-card">
+            <h3 style="color:var(--text-primary);margin-bottom:1.5rem;">Send a Message</h3>
+            <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                <div class="form-group">
+                  <label for="cf-name">Full Name</label>
+                  <input type="text" id="cf-name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                  <label for="cf-email">Email Address</label>
+                  <input type="email" id="cf-email" name="email" placeholder="your@email.com" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="cf-subject">Subject</label>
+                <input type="text" id="cf-subject" name="subject" placeholder="Project inquiry, consulting, etc.">
+              </div>
+              <div class="form-group">
+                <label for="cf-message">Message</label>
+                <textarea id="cf-message" name="message" rows="5" placeholder="Tell me about your project or inquiry…" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;" id="cf-submit">
+                Send Message ✉️
+              </button>
+            </form>
+            <div class="form-success" id="form-success">
+              <h3>✅ Message Sent!</h3>
+              <p>Thank you for reaching out. I'll get back to you within 24 hours.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 <strong>Rishi Aryal</strong>. &nbsp;
+      <a href="https://github.com/RishiAryal24" target="_blank">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/rishi-aryal-nepal" target="_blank">LinkedIn</a>
+    </p>
+  </div>
+</footer>
+<button id="scroll-top" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+</button>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Form handling — uses mailto fallback if Formspree not configured
+  const form = document.getElementById('contact-form');
+  form.addEventListener('submit', function(e) {
+    const action = form.getAttribute('action');
+    if (action.includes('YOUR_FORM_ID')) {
+      // Fallback to mailto
+      e.preventDefault();
+      const name    = document.getElementById('cf-name').value;
+      const subject = document.getElementById('cf-subject').value || 'Portfolio Contact';
+      const message = document.getElementById('cf-message').value;
+      window.location.href = `mailto:aryalrishi29@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('From: ' + name + '\n\n' + message)}`;
+    }
+  });
+</script>
+</body>
+</html>

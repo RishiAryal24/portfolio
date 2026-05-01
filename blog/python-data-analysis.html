@@ -1,43 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Data Analysis with Python & Pandas | Rishi Aryal</title>
-<meta name="description" content="Step-by-step guide to analyzing large datasets with Python and Pandas to generate actionable insights.">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<style>
-body{font-family:'Poppins',sans-serif;background:#0f172a;color:#fff;padding:20px;line-height:1.7;}
-h1,h2,h3{color:#38bdf8;}
-a{color:#38bdf8;text-decoration:none;}
-a.btn{display:inline-block;margin-top:20px;padding:10px 20px;background:#38bdf8;color:#000;border-radius:6px;font-weight:600;}
-.container{max-width:900px;margin:auto;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Analysis with Python & Pandas | Rishi Aryal</title>
+  <meta name="description" content="Step-by-step guide to analyzing large datasets with Python and Pandas to generate actionable insights.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    .post-hero { padding:80px 0 40px; background:linear-gradient(180deg,rgba(99,102,241,0.07) 0%,transparent 100%); }
+    .post-meta { display:flex; flex-wrap:wrap; gap:.75rem; align-items:center; margin-top:1.25rem; }
+    .post-body { max-width:780px; margin:0 auto; }
+    .post-body h2 { color:var(--text-primary); margin:2.5rem 0 1rem; font-size:1.4rem; }
+    .post-body p { margin-bottom:1.25rem; line-height:1.9; }
+    .post-body pre {
+      background:rgba(255,255,255,.04); border:1px solid var(--border);
+      border-radius:var(--radius-sm); padding:1.25rem; overflow-x:auto;
+      font-size:.85rem; color:var(--cyan); margin-bottom:1.5rem;
+      font-family:'Courier New',monospace; line-height:1.7;
+    }
+    .post-body code { color:var(--cyan); background:rgba(6,182,212,.1); padding:2px 6px; border-radius:4px; font-size:.85em; }
+    .post-nav { display:flex; gap:1rem; flex-wrap:wrap; margin-top:3rem; }
+    .tip-box {
+      background:rgba(6,182,212,.07); border:1px solid rgba(6,182,212,.25);
+      border-left:3px solid var(--cyan); border-radius:var(--radius-sm);
+      padding:1rem 1.25rem; margin-bottom:1.5rem;
+    }
+    .tip-box p { margin-bottom:0; color:var(--text-secondary); font-size:.9rem; }
+  </style>
 </head>
 <body>
-<div class="container">
-<h1>Data Analysis with Python & Pandas</h1>
-<p><strong>Author:</strong> Rishi Aryal | <strong>Date:</strong> 2026-01-15 | <strong>Category:</strong> Python</p>
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-logo">Rishi Aryal</a>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../projects.html">Projects</a></li>
+      <li><a href="../experience.html">Experience</a></li>
+      <li><a href="../skills.html">Skills</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-<h2>Introduction</h2>
-<p>Python's Pandas library is a powerful tool for analyzing large datasets. In this tutorial, we will explore how to manipulate, analyze, and visualize data efficiently.</p>
+<div class="page-wrapper">
+  <div class="post-hero">
+    <div class="container" data-aos="fade-up">
+      <span class="badge">Python</span>
+      <h1 style="margin-top:.75rem;">Data Analysis with <span class="gradient-text">Python &amp; Pandas</span></h1>
+      <div class="post-meta">
+        <span style="font-size:.82rem;color:var(--text-muted);">✍️ Rishi Aryal</span>
+        <span style="font-size:.82rem;color:var(--text-muted);">📅 January 15, 2026</span>
+        <span style="font-size:.82rem;color:var(--text-muted);">⏱ 6 min read</span>
+      </div>
+    </div>
+  </div>
 
-<h2>Step 1: Import Libraries</h2>
-<p>Import pandas, numpy, and matplotlib for data manipulation and visualization.</p>
+  <section>
+    <div class="container">
+      <div class="post-body" data-aos="fade-up">
 
-<h2>Step 2: Load Dataset</h2>
-<p>Read your dataset using `pd.read_csv()` and explore it using `head()`, `info()`, and `describe()`.</p>
+        <h2>Introduction</h2>
+        <p>Data is the backbone of modern decision-making. In my work delivering MIS and EMIS platforms for governments and UN agencies, Python and Pandas have been indispensable for transforming raw data exports into actionable insights for senior stakeholders. This guide walks through the essential workflow.</p>
 
-<h2>Step 3: Data Cleaning</h2>
-<p>Handle missing values, remove duplicates, and normalize data for accurate analysis.</p>
+        <h2>Step 1 — Set Up Your Environment</h2>
+        <p>Start by creating an isolated Python environment and installing the core libraries:</p>
+        <pre>python -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
+pip install pandas numpy matplotlib openpyxl</pre>
 
-<h2>Step 4: Analysis & Visualization</h2>
-<p>Use Pandas groupby, pivot tables, and matplotlib/seaborn plots to generate insights.</p>
+        <h2>Step 2 — Load Your Dataset</h2>
+        <p>Pandas makes it trivial to load data from CSV, Excel, or databases. Always inspect your data immediately after loading:</p>
+        <pre>import pandas as pd
 
-<h2>Conclusion</h2>
-<p>Data analysis with Python allows for actionable insights and better decision-making in projects and business intelligence.</p>
+# Load CSV
+df = pd.read_csv('beneficiaries.csv')
 
-<a class="btn" href="../index.html">Back to Portfolio</a>
+# Quick inspection
+print(df.shape)       # (rows, columns)
+print(df.dtypes)      # column types
+print(df.head())      # first 5 rows
+print(df.isnull().sum())  # missing values per column</pre>
+
+        <div class="tip-box">
+          <p>💡 <strong>Tip:</strong> Always check <code>df.isnull().sum()</code> immediately. In government datasets, missing values in key identifier columns can silently corrupt your analysis.</p>
+        </div>
+
+        <h2>Step 3 — Clean &amp; Transform</h2>
+        <p>Real-world datasets are rarely clean. Here are the transformations I apply on almost every project:</p>
+        <pre># Drop duplicates
+df = df.drop_duplicates(subset=['beneficiary_id'])
+
+# Fill or drop nulls
+df['district'] = df['district'].fillna('Unknown')
+df = df.dropna(subset=['date_of_birth'])
+
+# Parse dates
+df['enrollment_date'] = pd.to_datetime(df['enrollment_date'], errors='coerce')
+
+# Normalize text columns
+df['district'] = df['district'].str.strip().str.title()</pre>
+
+        <h2>Step 4 — Aggregate &amp; Analyse</h2>
+        <p>With clean data, generate summary statistics by group — the bread and butter of management reporting:</p>
+        <pre># Beneficiaries by district
+summary = df.groupby('district').agg(
+    total=('beneficiary_id', 'count'),
+    female=('gender', lambda x: (x == 'Female').sum()),
+    avg_age=('age', 'mean')
+).reset_index()
+
+print(summary.sort_values('total', ascending=False).head(10))</pre>
+
+        <h2>Step 5 — Export Results</h2>
+        <p>Export your cleaned, aggregated data for dashboards or donor reports:</p>
+        <pre># Excel report with multiple sheets
+with pd.ExcelWriter('analysis_report.xlsx', engine='openpyxl') as writer:
+    df.to_excel(writer, sheet_name='Clean Data', index=False)
+    summary.to_excel(writer, sheet_name='District Summary', index=False)
+
+print("Report exported successfully.")</pre>
+
+        <h2>Conclusion</h2>
+        <p>This five-step workflow — environment, load, clean, analyse, export — applies whether you're processing 500 rows or 5 million. Python and Pandas give you the power to automate what would otherwise take days of manual spreadsheet work, delivering insights that drive real program decisions.</p>
+
+        <div class="post-nav">
+          <a href="../blog.html" class="btn btn-outline">← Back to Blog</a>
+          <a href="django-rest-apis.html" class="btn btn-ghost">Next: Django REST APIs →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 <strong>Rishi Aryal</strong>. &nbsp;
+      <a href="https://github.com/RishiAryal24" target="_blank">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/rishi-aryal-nepal" target="_blank">LinkedIn</a>
+    </p>
+  </div>
+</footer>
+<button id="scroll-top" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+</button>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>
