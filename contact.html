@@ -111,7 +111,11 @@
         <div data-aos="fade-left">
           <div class="glass-card">
             <h3 style="color:var(--text-primary);margin-bottom:1.5rem;">Send a Message</h3>
-            <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <form id="contact-form" action="https://formsubmit.co/aryalrishi29@gmail.com" method="POST">
+              <input type="hidden" name="_subject" value="New portfolio contact message">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://www.rishiaryal.com.np/contact.html?sent=1">
               <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
                 <div class="form-group">
                   <label for="cf-name">Full Name</label>
@@ -161,19 +165,13 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="js/main.js"></script>
 <script>
-  // Form handling — uses mailto fallback if Formspree not configured
+  // Show confirmation after the form service redirects back to this page.
   const form = document.getElementById('contact-form');
-  form.addEventListener('submit', function(e) {
-    const action = form.getAttribute('action');
-    if (action.includes('YOUR_FORM_ID')) {
-      // Fallback to mailto
-      e.preventDefault();
-      const name    = document.getElementById('cf-name').value;
-      const subject = document.getElementById('cf-subject').value || 'Portfolio Contact';
-      const message = document.getElementById('cf-message').value;
-      window.location.href = `mailto:aryalrishi29@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('From: ' + name + '\n\n' + message)}`;
-    }
-  });
+  const success = document.getElementById('form-success');
+  if (new URLSearchParams(window.location.search).get('sent') === '1') {
+    form.style.display = 'none';
+    success.style.display = 'block';
+  }
 </script>
 </body>
 </html>
